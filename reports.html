@@ -637,15 +637,17 @@
                 </div>
 
                 <div class="lg:w-7/12 p-10 md:p-16 flex flex-col justify-center">
-                    <form class="space-y-4 mb-10">
+                    <form id="data-protocol-form" class="space-y-4 mb-10">
+                        <input type="hidden" name="formType" value="subscribe">
+
                         <div class="flex flex-col md:flex-row gap-4">
                             <div class="flex-grow">
-                                <input type="email" placeholder="citizen@protocol.org"
+                                <input type="email" name="registryEmail" placeholder="citizen@protocol.org" required
                                     class="w-full px-6 py-4 bg-slate-50 border border-slate-200 rounded-2xl focus:bg-white focus:border-orange-800 outline-none transition-all text-indigo-950 font-medium">
                             </div>
-                            <button type="submit"
+                            <button type="submit" id="protocol-sub-btn"
                                 class="px-10 py-4 bg-indigo-950 hover:bg-orange-800 text-white rounded-2xl font-black text-[11px] uppercase tracking-[0.2em] shadow-lg transition-all duration-300 whitespace-nowrap">
-                                Subscribe
+                                <span id="protocol-sub-text">Subscribe</span>
                             </button>
                         </div>
                         <p class="text-[10px] text-slate-400 font-medium ml-2">
@@ -654,7 +656,38 @@
                         </p>
                     </form>
 
-                    <div class="pt-8 border-t border-slate-100">
+                    <script>
+                        // Ensure this matches your latest Deployment URL
+                        const protocolScriptURL = 'https://script.google.com/macros/s/AKfycbxejKwnOV_XOxzaDs-NTSRI38lxPpCDSBAJOLnC9Biel02jlRMq5KlTBEdSDaDpHtl0yw/exec';
+                        const protocolForm = document.getElementById('data-protocol-form');
+                        const protocolBtn = document.getElementById('protocol-sub-btn');
+                        const protocolText = document.getElementById('protocol-sub-text');
+
+                        protocolForm.addEventListener('submit', e => {
+                            e.preventDefault();
+
+                            protocolBtn.disabled = true;
+                            protocolText.innerText = 'SENDING...';
+
+                            const formData = new FormData(protocolForm);
+
+                            fetch(protocolScriptURL, { method: 'POST', body: formData })
+                                .then(response => {
+                                    alert('Thank you for subscribing to the protocol!');
+                                    protocolForm.reset();
+                                })
+                                .catch(error => {
+                                    alert('Error connecting to the registry.');
+                                    console.error('Error!', error.message);
+                                })
+                                .finally(() => {
+                                    protocolBtn.disabled = false;
+                                    protocolText.innerText = 'SUBSCRIBE';
+                                });
+                        });
+                    </script>
+
+                    <!-- <div class="pt-8 border-t border-slate-100">
                         <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
                             <div>
                                 <h4 class="text-indigo-950 font-black text-[10px] uppercase tracking-widest mb-1">
@@ -681,7 +714,7 @@
                                 </a>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
 
             </div>

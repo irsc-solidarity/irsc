@@ -555,15 +555,50 @@
                         </p>
                     </div>
 
-                    <form class="space-y-4">
-                        <input type="email" placeholder="citizen@protocol.org"
-                            class="w-full px-4 py-4 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:ring-2 focus:ring-indigo-950/10 focus:border-indigo-950 outline-none transition-all">
+                    <form id="footer-subscribe" class="space-y-4">
+                        <input type="hidden" name="formType" value="subscribe">
 
-                        <button type="submit"
+                        <div class="space-y-1">
+                            <input type="email" name="registryEmail" placeholder="citizen@protocol.org" required
+                                class="w-full px-4 py-4 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:ring-2 focus:ring-indigo-950/10 focus:border-indigo-950 outline-none transition-all">
+                        </div>
+
+                        <button type="submit" id="footer-sub-btn"
                             class="w-full py-4 bg-indigo-950 text-white text-[10px] font-black uppercase tracking-widest rounded-xl transition hover:bg-black shadow-md">
-                            Subscribe
+                            <span id="footer-sub-text">Subscribe</span>
                         </button>
                     </form>
+
+                    <script>
+                        // Ensure this scriptURL matches your LATEST Deployment URL from Apps Script
+                        const footerScriptURL = 'https://script.google.com/macros/s/AKfycbxejKwnOV_XOxzaDs-NTSRI38lxPpCDSBAJOLnC9Biel02jlRMq5KlTBEdSDaDpHtl0yw/exec';
+                        const footerForm = document.getElementById('footer-subscribe');
+                        const footerBtn = document.getElementById('footer-sub-btn');
+                        const footerText = document.getElementById('footer-sub-text');
+
+                        footerForm.addEventListener('submit', e => {
+                            e.preventDefault();
+
+                            footerBtn.disabled = true;
+                            footerText.innerText = 'Loading...';
+
+                            const formData = new FormData(footerForm);
+
+                            fetch(footerScriptURL, { method: 'POST', body: formData })
+                                .then(response => {
+                                    alert('Success! You are now subscribed.');
+                                    footerForm.reset();
+                                })
+                                .catch(error => {
+                                    alert('Submission failed. Check console for details.');
+                                    console.error('Error!', error.message);
+                                })
+                                .finally(() => {
+                                    footerBtn.disabled = false;
+                                    footerText.innerText = 'SUBSCRIBE';
+                                });
+                        });
+                    </script>
 
                     <div class="pt-6 border-t border-slate-100 flex justify-center gap-6 text-lg">
                         <a href="#" class="text-[#E1306C] hover:scale-110 transition-transform">

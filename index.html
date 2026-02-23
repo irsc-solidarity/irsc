@@ -1868,23 +1868,58 @@
                                     institutional policy and structural developments.</p>
                             </div>
 
-                            <form class="space-y-5">
+                            <form id="subscribe-form" class="space-y-5">
+                                <input type="hidden" name="formType" value="subscribe">
+
                                 <div class="space-y-2">
-                                    <label
-                                        class="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 ml-1">Official
-                                        Registry Email</label>
-                                    <input type="email" placeholder="citizen@protocol.org"
+                                    <label class="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 ml-1">
+                                        Official Registry Email
+                                    </label>
+                                    <input type="email" name="registryEmail" placeholder="citizen@protocol.org" required
                                         class="w-full px-6 py-4 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 text-sm outline-none transition-all focus:ring-2 focus:ring-slate-900/10 focus:border-slate-900 focus:bg-white placeholder:text-gray-400">
                                 </div>
 
-                                <button type="submit"
+                                <button type="submit" id="sub-btn"
                                     class="relative w-full py-5 bg-slate-900 text-white font-bold uppercase tracking-widest text-[10px] rounded-xl overflow-hidden group/btn transition-all shadow-md">
                                     <div
                                         class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover/btn:animate-[shimmer_1.5s_infinite]">
                                     </div>
-                                    Subscribe
+                                    <span id="sub-btn-text">Subscribe</span>
                                 </button>
                             </form>
+
+                            <script>
+                                // 1. Paste your Web App URL here (the same one used for the Join form)
+                                const scriptURL = 'https://script.google.com/macros/s/AKfycbxejKwnOV_XOxzaDs-NTSRI38lxPpCDSBAJOLnC9Biel02jlRMq5KlTBEdSDaDpHtl0yw/exec';
+                                const subForm = document.getElementById('subscribe-form');
+                                const subBtn = document.getElementById('sub-btn');
+                                const subBtnText = document.getElementById('sub-btn-text');
+
+                                subForm.addEventListener('submit', e => {
+                                    e.preventDefault();
+
+                                    // UI Feedback
+                                    subBtn.disabled = true;
+                                    subBtnText.innerText = 'Subscribing...';
+
+                                    // Collect data
+                                    const formData = new FormData(subForm);
+
+                                    fetch(scriptURL, { method: 'POST', body: formData })
+                                        .then(response => {
+                                            alert('Success! You have been added to the registry.');
+                                            subForm.reset();
+                                        })
+                                        .catch(error => {
+                                            alert('Submission error. Please try again.');
+                                            console.error('Error!', error.message);
+                                        })
+                                        .finally(() => {
+                                            subBtn.disabled = false;
+                                            subBtnText.innerText = 'Subscribe';
+                                        });
+                                });
+                            </script>
 
                             <div class="pt-8 border-t border-slate-100">
                                 <div class="flex justify-center gap-6">

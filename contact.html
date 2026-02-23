@@ -329,20 +329,22 @@
                         Hrs</span>
                 </div>
 
-                <form action="#" class="space-y-8">
+                <form id="contact-form" class="space-y-8">
+                    <input type="hidden" name="formType" value="contact">
+
                     <div class="space-y-6">
                         <div class="grid md:grid-cols-2 gap-6">
                             <div class="space-y-2">
                                 <label class="text-[10px] font-black uppercase tracking-widest text-slate-500 ml-2">Full
                                     Name</label>
-                                <input type="text" placeholder="John Doe"
+                                <input type="text" name="fullName" placeholder="John Doe" required
                                     class="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl focus:ring-2 focus:ring-orange-600 focus:bg-white transition-all outline-none">
                             </div>
                             <div class="space-y-2">
                                 <label
                                     class="text-[10px] font-black uppercase tracking-widest text-slate-500 ml-2">Email
                                     Address</label>
-                                <input type="email" placeholder="john@mumbai.com"
+                                <input type="email" name="email" placeholder="john@mumbai.com" required
                                     class="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl focus:ring-2 focus:ring-orange-600 focus:bg-white transition-all outline-none">
                             </div>
                         </div>
@@ -350,7 +352,7 @@
                         <div class="space-y-2">
                             <label class="text-[10px] font-black uppercase tracking-widest text-slate-500 ml-2">Nature
                                 of Inquiry</label>
-                            <select
+                            <select name="nature"
                                 class="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl focus:ring-2 focus:ring-orange-600 focus:bg-white transition-all outline-none appearance-none font-medium text-slate-700">
                                 <option>Partnership/Collaboration</option>
                                 <option>Volunteer Application</option>
@@ -362,16 +364,54 @@
                         <div class="space-y-2">
                             <label class="text-[10px] font-black uppercase tracking-widest text-slate-500 ml-2">Your
                                 Message</label>
-                            <textarea rows="4" placeholder="How can we help?"
+                            <textarea name="message" rows="4" placeholder="How can we help?" required
                                 class="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl focus:ring-2 focus:ring-orange-600 focus:bg-white transition-all outline-none resize-none"></textarea>
                         </div>
                     </div>
 
-                    <button type="submit"
+                    <button type="submit" id="contact-btn"
                         class="w-full py-5 bg-indigo-950 text-white rounded-2xl font-black uppercase tracking-[0.3em] text-[10px] hover:bg-orange-600 hover:-translate-y-1 transition-all shadow-xl shadow-indigo-900/20">
-                        Send Message
+                        <span id="contact-btn-text">Send Message</span>
                     </button>
                 </form>
+
+                <script>
+                    const contactScriptURL = 'https://script.google.com/macros/s/AKfycbxejKwnOV_XOxzaDs-NTSRI38lxPpCDSBAJOLnC9Biel02jlRMq5KlTBEdSDaDpHtl0yw/exec';
+
+                    const contactBtn = document.getElementById('contact-btn');
+                    const contactBtnText = document.getElementById('contact-btn-text');
+
+                    // 1. Target the FORM, not the button or a container div
+                    const contactForm = document.getElementById('contact-form');
+
+                    contactForm.addEventListener('submit', e => {
+                        e.preventDefault();
+
+                        // 1. Grab UI elements
+                        const contactBtn = document.getElementById('contact-btn');
+                        const contactBtnText = document.getElementById('contact-btn-text'); // Ensure you have this span ID
+
+                        // 2. Start Processing state
+                        contactBtn.disabled = true;
+                        if (contactBtnText) contactBtnText.innerText = 'PROCESSING...';
+                        else contactBtn.innerText = 'PROCESSING...'; // Fallback if span isn't used
+
+                        const formData = new FormData(e.target);
+
+                        // 3. Send data to Google Sheets
+                        fetch(contactScriptURL, { method: 'POST', body: formData })
+                            .then(response => {
+                                alert('Message sent successfully!');
+                                contactForm.reset();
+                            })
+                            .finally(() => {
+                                // 4. Revert UI state ONLY after save is finished or failed
+                                contactBtn.disabled = false;
+                                if (contactBtnText) contactBtnText.innerText = 'SEND MESSAGE';
+                                else contactBtn.innerText = 'SEND MESSAGE';
+                            });
+                    });
+                </script>
             </div>
         </div>
     </main>
