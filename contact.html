@@ -361,42 +361,85 @@
                     class="absolute top-0 inset-x-0 h-2 bg-gradient-to-r from-[#C69214] via-[#FFD700] to-[#C69214] rounded-t-[2.5rem]">
                 </div>
                 <form id="contact-form" class="space-y-8 font-serif">
+                    <input type="hidden" name="formType" value="contact">
+
                     <div class="grid md:grid-cols-2 gap-6">
                         <div class="space-y-2">
                             <label class="text-[10px] font-black uppercase tracking-widest text-slate-500 ml-2">Full
                                 Name</label>
-                            <input type="text" placeholder="John Doe" required
+                            <input type="text" name="fullName" placeholder="John Doe" required
                                 class="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:bg-white focus:border-[#C69214] transition-all">
                         </div>
                         <div class="space-y-2">
                             <label
                                 class="text-[10px] font-black uppercase tracking-widest text-slate-500 ml-2">Email</label>
-                            <input type="email" placeholder="john@mumbai.com" required
+                            <input type="email" name="email" placeholder="john@mumbai.com" required
                                 class="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:bg-white focus:border-[#C69214] transition-all">
                         </div>
                     </div>
                     <div class="space-y-2">
                         <label class="text-[10px] font-black uppercase tracking-widest text-slate-500 ml-2">Nature of
                             Inquiry</label>
-                        <select
+                        <select name="nature"
                             class="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none appearance-none">
-                            <option>Partnership/Collaboration</option>
-                            <option>Volunteer Application</option>
-                            <option>Media Inquiry</option>
-                            <option>Other Inquiry</option>
+                            <option value="Partnership/Collaboration">Partnership/Collaboration</option>
+                            <option value="Volunteer Application">Volunteer Application</option>
+                            <option value="Media Inquiry">Media Inquiry</option>
+                            <option value="Other Inquiry">Other Inquiry</option>
                         </select>
                     </div>
                     <div class="space-y-2">
                         <label
                             class="text-[10px] font-black uppercase tracking-widest text-slate-500 ml-2">Message</label>
-                        <textarea rows="4" placeholder="How can we help?"
+                        <textarea name="message" rows="4" placeholder="How can we help?"
                             class="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none resize-none focus:bg-white focus:border-[#C69214] transition-all"></textarea>
                     </div>
-                    <button type="submit"
+                    <button type="submit" id="submit-btn"
                         class="w-full py-5 bg-slate-950 text-white rounded-2xl font-black uppercase tracking-[0.3em] text-[10px] hover:bg-[#C69214] transition-all shadow-xl active:scale-95">
-                        Send Message
+                        <span id="btn-text">Send Message</span>
                     </button>
                 </form>
+
+                <script>
+    // Shared Configuration
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxejKwnOV_XOxzaDs-NTSRI38lxPpCDSBAJOLnC9Biel02jlRMq5KlTBEdSDaDpHtl0yw/exec';
+
+    // --- Form 1: Contact Form ---
+    (function() {
+        const contactForm = document.getElementById('contact-form');
+        const contactBtnText = document.getElementById('btn-text-contact');
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', e => {
+                e.preventDefault();
+                contactBtnText.innerText = 'Sending...';
+                
+                fetch(GOOGLE_SCRIPT_URL, { method: 'POST', body: new FormData(contactForm) })
+                    .then(() => { alert('Message sent!'); contactForm.reset(); })
+                    .catch(() => alert('Error!'))
+                    .finally(() => contactBtnText.innerText = 'Send Message');
+            });
+        }
+    })();
+
+    // --- Form 2: Subscribe Form ---
+    (function() {
+        const subForm = document.getElementById('subscribe-form');
+        const subBtnText = document.getElementById('sub-btn-text');
+
+        if (subForm) {
+            subForm.addEventListener('submit', e => {
+                e.preventDefault();
+                subBtnText.innerText = 'Subscribing...';
+                
+                fetch(GOOGLE_SCRIPT_URL, { method: 'POST', body: new FormData(subForm) })
+                    .then(() => { alert('Subscribed!'); subForm.reset(); })
+                    .catch(() => alert('Error!'))
+                    .finally(() => subBtnText.innerText = 'Subscribe');
+            });
+        }
+    })();
+</script>
             </div>
         </div>
     </main>
@@ -464,21 +507,42 @@
                             </p>
                         </div>
 
-                        <form class="space-y-4">
-                            <div class="space-y-2">
-                                <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">
-                                    Email Address
-                                </label>
-                                <input type="email" placeholder="your.email@example.com"
-                                    class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:ring-4 focus:ring-[#C69214]/10 focus:border-[#C69214]/40 outline-none transition-all placeholder:text-slate-400 font-medium"
-                                    required />
-                            </div>
+                        <form id="subscribe-form" class="space-y-4">
+    <input type="hidden" name="formType" value="subscribe">
 
-                            <button type="submit"
-                                class="w-full py-4 bg-[#C69214] text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-xl transition-all hover:bg-[#B3850C] active:scale-[0.98] shadow-lg shadow-[#C69214]/20">
-                                Subscribe
-                            </button>
-                        </form>
+    <div class="space-y-2">
+        <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">
+            Email Address
+        </label>
+        <input type="email" name="registryEmail" placeholder="your.email@example.com"
+            class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:ring-4 focus:ring-[#C69214]/10 focus:border-[#C69214]/40 outline-none transition-all placeholder:text-slate-400 font-medium"
+            required />
+    </div>
+
+    <button type="submit" id="sub-btn"
+        class="w-full py-4 bg-[#C69214] text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-xl transition-all hover:bg-[#B3850C] active:scale-[0.98] shadow-lg shadow-[#C69214]/20">
+        <span id="sub-btn-text">Subscribe</span>
+    </button>
+</form>
+
+<script>
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxejKwnOV_XOxzaDs-NTSRI38lxPpCDSBAJOLnC9Biel02jlRMq5KlTBEdSDaDpHtl0yw/exec';
+    const form = document.getElementById('subscribe-form');
+    const btnText = document.getElementById('sub-btn-text');
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        btnText.innerText = 'Subscribing...';
+        
+        fetch(SCRIPT_URL, { method: 'POST', body: new FormData(form) })
+            .then(() => {
+                alert('Thank you for subscribing!');
+                form.reset();
+            })
+            .catch(() => alert('Error! Please try again.'))
+            .finally(() => btnText.innerText = 'Subscribe');
+    });
+</script>
                     </div>
                 </div>
             </div>
