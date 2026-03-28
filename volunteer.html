@@ -970,61 +970,7 @@
                             </button>
                         </form>
 
-                        <script>
-                            // Shared Configuration
-                            const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxejKwnOV_XOxzaDs-NTSRI38lxPpCDSBAJOLnC9Biel02jlRMq5KlTBEdSDaDpHtl0yw/exec';
-
-                            // --- Form 1: Join Form ---
-                            (function () {
-                                const joinForm = document.getElementById('join-form');
-                                const joinBtnText = document.getElementById('btn-text');
-
-                                if (joinForm) {
-                                    joinForm.addEventListener('submit', e => {
-                                        e.preventDefault();
-                                        joinBtnText.innerText = 'Sending...';
-                                        fetch(GOOGLE_SCRIPT_URL, { method: 'POST', body: new FormData(joinForm) })
-                                            .then(() => { alert('Success!'); joinForm.reset(); })
-                                            .catch(() => alert('Error!'))
-                                            .finally(() => joinBtnText.innerText = 'Join the Movement');
-                                    });
-                                }
-                            })();
-
-                            // --- Form 2: Contact Form ---
-                            (function () {
-                                const contactForm = document.getElementById('contact-form');
-                                const contactBtnText = document.getElementById('btn-text-contact');
-
-                                if (contactForm) {
-                                    contactForm.addEventListener('submit', e => {
-                                        e.preventDefault();
-                                        contactBtnText.innerText = 'Sending...';
-                                        fetch(GOOGLE_SCRIPT_URL, { method: 'POST', body: new FormData(contactForm) })
-                                            .then(() => { alert('Message sent!'); contactForm.reset(); })
-                                            .catch(() => alert('Error!'))
-                                            .finally(() => contactBtnText.innerText = 'Send Message');
-                                    });
-                                }
-                            })();
-
-                            // --- Form 3: Subscribe Form ---
-                            (function () {
-                                const subForm = document.getElementById('subscribe-form');
-                                const subBtnText = document.getElementById('sub-btn-text');
-
-                                if (subForm) {
-                                    subForm.addEventListener('submit', e => {
-                                        e.preventDefault();
-                                        subBtnText.innerText = 'Subscribing...';
-                                        fetch(GOOGLE_SCRIPT_URL, { method: 'POST', body: new FormData(subForm) })
-                                            .then(() => { alert('Subscribed!'); subForm.reset(); })
-                                            .catch(() => alert('Error!'))
-                                            .finally(() => subBtnText.innerText = 'Subscribe');
-                                    });
-                                }
-                            })();
-                        </script>
+                       
                     </div>
                 </div>
             </div>
@@ -1054,8 +1000,6 @@
                             </span>
                         </div>
                     </div>
-
-                    <!-- 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 --github token -->
 
                     <div class="flex gap-4 items-center">
 
