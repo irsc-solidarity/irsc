@@ -635,20 +635,16 @@
     <section class="bg-[#fdfbf7] py-20 lg:py-28 overflow-hidden">
         <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-start relative z-10">
 
-            <div class="space-y-10">
+            <div class="flex flex-col gap-10">
                 <div class="space-y-4">
                     <h2 class="text-orange-800 font-bold tracking-widest text-[10px] uppercase flex items-center gap-2">
-                        <span class="w-6 h-px bg-orange-800/40"></span> Citizen Participation
+                        <span class="w-6 h-px bg-orange-800/40"></span> Participation
                     </h2>
                     <h1 class="font-serif text-4xl lg:text-6xl font-bold text-indigo-950 leading-tight">
-                        Join the <br> <span
-                            class="italic text-transparent bg-clip-text bg-gradient-to-r from-[#fcd34d] via-[#d97706] to-[#b45309]">
-                            Mission</span>
+                        Volunteer with <br>
+                        <span
+                            class="italic text-transparent bg-clip-text bg-gradient-to-r from-[#fcd34d] via-[#d97706] to-[#b45309]">Us</span>
                     </h1>
-                    <!-- <p class="text-lg text-slate-600 max-w-lg leading-relaxed font-medium">
-                        Join a platform built for transparency and local impact. We empower citizens with the tools to
-                        organize, advocate, and protect their communities.
-                    </p> -->
                 </div>
 
                 <div class="grid sm:grid-cols-2 gap-6">
@@ -668,8 +664,9 @@
                                 </svg>
                             </div>
                         </div>
-                        <h4 class="text-2xl font-bold text-slate-950 transition-colors group-hover:text-blue-600">
-                            Organization</h4>
+                        <h4 class="text-2xl font-bold text-slate-950 group-hover:text-blue-600 transition-colors">
+                            Religious Organization</h4>
+                        <p class="mt-3 text-slate-500 text-sm">Member / Representative</p>
                     </a>
 
                     <a href="#"
@@ -688,21 +685,33 @@
                                 </svg>
                             </div>
                         </div>
-                        <h4 class="text-2xl font-bold text-slate-950 transition-colors group-hover:text-emerald-600">
+                        <h4 class="text-2xl font-bold text-slate-950 group-hover:text-emerald-600 transition-colors">
                             Individual</h4>
+                        <p class="mt-3 text-slate-500 text-sm">Not Affiliated to Any Organisation</p>
                     </a>
                 </div>
 
-                <div class="relative p-8 rounded-[2.5rem] bg-indigo-950 text-white shadow-2xl overflow-hidden">
-                    <div class="absolute -right-4 -bottom-4 text-white/10 text-8xl">
-                        <i class="fa-solid fa-landmark"></i>
-                    </div>
-                    <p class="font-serif text-2xl leading-snug relative z-10 italic">
-                        "We are Indians, firstly and lastly."
+                <div
+                    class="w-full p-10 rounded-[2.5rem] bg-white border border-slate-100 shadow-xl flex flex-col justify-center">
+                    <p class="text-slate-600 leading-relaxed font-medium mb-8">
+                        Volunteering with <span class="text-indigo-950 font-bold">IRSC</span> allows you to
+                        contribute to interfaith dialogue and social harmony while gaining valuable experience in
                     </p>
-                    <div class="mt-4 flex items-center gap-2 relative z-10">
-                        <span class="text-[10px] font-black uppercase tracking-widest text-orange-400">Dr. B.R.
-                            Ambedkar</span>
+
+                    <div class="flex flex-wrap gap-3">
+                        <div class="flex items-center gap-2 px-4 py-2 bg-slate-50 border border-slate-100 rounded-xl">
+                            <i class="fa-solid fa-people-group text-indigo-600 text-xs"></i>
+                            <span class="text-[9px] font-bold uppercase tracking-wider text-slate-500">Community Engagement</span>
+                        </div>
+                        <div class="flex items-center gap-2 px-4 py-2 bg-slate-50 border border-slate-100 rounded-xl">
+                            <i class="fa-solid fa-calendar-check text-indigo-600 text-xs"></i>
+                            <span
+                                class="text-[9px] font-bold uppercase tracking-wider text-slate-500">Event Coordination</span>
+                        </div>
+                        <div class="flex items-center gap-2 px-4 py-2 bg-slate-50 border border-slate-100 rounded-xl">
+                            <i class="fa-solid fa-users-gear text-indigo-600 text-xs"></i>
+                            <span class="text-[9px] font-bold uppercase tracking-wider text-slate-500">Teamwork</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -710,12 +719,13 @@
             <div class="bg-white rounded-[3rem] border border-slate-200 shadow-2xl p-8 md:p-12">
                 <header class="mb-10">
                     <h3 class="text-2xl font-bold text-indigo-950">Volunteer Application</h3>
-                    <p class="text-slate-400 text-xs font-bold uppercase tracking-widest mt-2">Verified Institutional
-                        Entry</p>
+                    <!-- <p class="text-slate-400 text-xs font-bold uppercase tracking-widest mt-2">Verified Institutional
+                        Entry</p> -->
                 </header>
 
                 <form id="join-form" class="space-y-7">
                     <input type="hidden" name="formType" value="join">
+
                     <div class="grid sm:grid-cols-2 gap-5">
                         <div class="space-y-1">
                             <label class="text-[9px] font-black uppercase tracking-widest text-slate-400 ml-4">Full
@@ -736,102 +746,133 @@
                             Interest</label>
                         <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
                             <label class="cursor-pointer group">
-                                <input type="checkbox" name="interests" value="Civic Tech" class="sr-only peer">
+                                <input type="checkbox" name="interests" value="Outreach to Religious Organisations"
+                                    class="sr-only peer">
                                 <div
-                                    class="p-4 rounded-2xl border border-slate-100 bg-slate-50 text-center transition-all peer-checked:border-orange-800 peer-checked:bg-white peer-checked:shadow-md">
+                                    class="h-full p-4 rounded-2xl border border-slate-100 bg-slate-50 text-center transition-all peer-checked:border-orange-800 peer-checked:bg-white peer-checked:shadow-md">
                                     <i
-                                        class="fa-solid fa-laptop-code text-blue-500 mb-1 block group-hover:scale-110"></i>
-                                    <span class="text-[9px] font-black text-slate-600 uppercase">Civic Tech</span>
+                                        class="fa-solid fa-hands-holding-child text-blue-500 mb-1 block group-hover:scale-110"></i>
+                                    <span class="text-[9px] font-black text-slate-600 uppercase">Outreach to Religious Organisations</span>
                                 </div>
                             </label>
 
                             <label class="cursor-pointer group">
-                                <input type="checkbox" name="interests" value="Field Ops" class="sr-only peer">
+                                <input type="checkbox" name="interests" value="Event Coordination and On-ground Support" class="sr-only peer">
                                 <div
-                                    class="p-4 rounded-2xl border border-slate-100 bg-slate-50 text-center transition-all peer-checked:border-orange-800 peer-checked:bg-white peer-checked:shadow-md">
+                                    class="h-full p-4 rounded-2xl border border-slate-100 bg-slate-50 text-center transition-all peer-checked:border-orange-800 peer-checked:bg-white peer-checked:shadow-md">
                                     <i
-                                        class="fa-solid fa-users-gear text-orange-500 mb-1 block group-hover:scale-110"></i>
-                                    <span class="text-[9px] font-black text-slate-600 uppercase">Field Ops</span>
+                                        class="fa-solid fa-calendar-check text-orange-500 mb-1 block group-hover:scale-110"></i>
+                                    <span class="text-[9px] font-black text-slate-600 uppercase">Event Coordination and On-ground Support</span>
                                 </div>
                             </label>
 
                             <label class="cursor-pointer group">
-                                <input type="checkbox" name="interests" value="Legal Aid" class="sr-only peer">
+                                <input type="checkbox" name="interests" value="Research and Documentation"
+                                    class="sr-only peer">
                                 <div
-                                    class="p-4 rounded-2xl border border-slate-100 bg-slate-50 text-center transition-all peer-checked:border-orange-800 peer-checked:bg-white peer-checked:shadow-md">
+                                    class="h-full p-4 rounded-2xl border border-slate-100 bg-slate-50 text-center transition-all peer-checked:border-orange-800 peer-checked:bg-white peer-checked:shadow-md">
                                     <i
-                                        class="fa-solid fa-scale-balanced text-emerald-500 mb-1 block group-hover:scale-110"></i>
-                                    <span class="text-[9px] font-black text-slate-600 uppercase">Legal Aid</span>
+                                        class="fa-solid fa-book-open-reader text-emerald-500 mb-1 block group-hover:scale-110"></i>
+                                    <span class="text-[9px] font-black text-slate-600 uppercase">Research and Documentation</span>
                                 </div>
                             </label>
 
                             <label class="cursor-pointer group">
-                                <input type="checkbox" name="interests" value="Mediation" class="sr-only peer">
+                                <input type="checkbox" name="interests" value="Communications and Social Media" class="sr-only peer">
                                 <div
-                                    class="p-4 rounded-2xl border border-slate-100 bg-slate-50 text-center transition-all peer-checked:border-orange-800 peer-checked:bg-white peer-checked:shadow-md">
+                                    class="h-full p-4 rounded-2xl border border-slate-100 bg-slate-50 text-center transition-all peer-checked:border-orange-800 peer-checked:bg-white peer-checked:shadow-md">
                                     <i
-                                        class="fa-solid fa-handshake-angle text-purple-500 mb-1 block group-hover:scale-110"></i>
-                                    <span class="text-[9px] font-black text-slate-600 uppercase">Mediation</span>
+                                        class="fa-solid fa-bullhorn text-purple-500 mb-1 block group-hover:scale-110"></i>
+                                    <span class="text-[9px] font-black text-slate-600 uppercase">Communications and Social Media</span>
                                 </div>
                             </label>
 
                             <label class="cursor-pointer group">
-                                <input type="checkbox" name="interests" value="Media" class="sr-only peer">
+                                <input type="checkbox" name="interests" value="Community Engagement" class="sr-only peer">
                                 <div
-                                    class="p-4 rounded-2xl border border-slate-100 bg-slate-50 text-center transition-all peer-checked:border-orange-800 peer-checked:bg-white peer-checked:shadow-md">
+                                    class="h-full p-4 rounded-2xl border border-slate-100 bg-slate-50 text-center transition-all peer-checked:border-orange-800 peer-checked:bg-white peer-checked:shadow-md">
                                     <i
-                                        class="fa-solid fa-camera-retro text-rose-500 mb-1 block group-hover:scale-110"></i>
-                                    <span class="text-[9px] font-black text-slate-600 uppercase">Media</span>
+                                        class="fa-solid fa-hand-holding-heart text-rose-500 mb-1 block group-hover:scale-110"></i>
+                                    <span class="text-[9px] font-black text-slate-600 uppercase">Community Engagement</span>
                                 </div>
                             </label>
 
                             <label class="cursor-pointer group">
-                                <input type="checkbox" name="interests" value="Research" class="sr-only peer">
+                                <input type="checkbox" name="interests" value="Administrative Support" class="sr-only peer">
                                 <div
-                                    class="p-4 rounded-2xl border border-slate-100 bg-slate-50 text-center transition-all peer-checked:border-orange-800 peer-checked:bg-white peer-checked:shadow-md">
+                                    class="h-full p-4 rounded-2xl border border-slate-100 bg-slate-50 text-center transition-all peer-checked:border-orange-800 peer-checked:bg-white peer-checked:shadow-md">
                                     <i
-                                        class="fa-solid fa-file-signature text-amber-500 mb-1 block group-hover:scale-110"></i>
-                                    <span class="text-[9px] font-black text-slate-600 uppercase">Research</span>
+                                        class="fa-solid fa-hand-holding-heart text-rose-500 mb-1 block group-hover:scale-110"></i>
+                                    <span class="text-[9px] font-black text-slate-600 uppercase">Administrative Support</span>
+                                </div>
+                            </label>
+
+                            <label class="cursor-pointer group">
+                                <input type="checkbox" name="interests" value="Fundraising and Partnerships" class="sr-only peer">
+                                <div
+                                    class="h-full p-4 rounded-2xl border border-slate-100 bg-slate-50 text-center transition-all peer-checked:border-orange-800 peer-checked:bg-white peer-checked:shadow-md">
+                                    <i
+                                        class="fa-solid fa-hand-holding-heart text-rose-500 mb-1 block group-hover:scale-110"></i>
+                                    <span class="text-[9px] font-black text-slate-600 uppercase">Fundraising and Partnerships</span>
+                                </div>
+                            </label>
+
+                            <label class="cursor-pointer group">
+                                <input type="checkbox" id="toggle-other" name="interests" value="Other"
+                                    class="sr-only peer">
+                                <div
+                                    class="h-full p-4 rounded-2xl border border-slate-100 bg-slate-50 text-center transition-all peer-checked:border-indigo-600 peer-checked:bg-white peer-checked:shadow-lg group-hover:border-indigo-200">
+                                    <i
+                                        class="fa-solid fa-ellipsis text-slate-400 mb-1 block group-hover:scale-110 transition-transform peer-checked:text-indigo-600"></i>
+                                    <span class="text-[9px] font-black text-slate-600 uppercase">Other</span>
                                 </div>
                             </label>
                         </div>
-                    </div>
 
-                    <div class="space-y-4">
-                        <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Weekly
-                            Availability</label>
-                        <div class="flex p-1.5 bg-slate-100 rounded-2xl">
-                            <label class="flex-1 cursor-pointer">
-                                <input type="radio" name="availability" value="Weekends" class="sr-only peer" checked>
-                                <div
-                                    class="py-3 text-center text-[10px] font-black uppercase text-slate-400 peer-checked:bg-white peer-checked:text-indigo-950 peer-checked:shadow-sm rounded-xl transition-all">
-                                    Weekends</div>
-                            </label>
-                            <label class="flex-1 cursor-pointer">
-                                <input type="radio" name="availability" value="Weekdays" class="sr-only peer">
-                                <div
-                                    class="py-3 text-center text-[10px] font-black uppercase text-slate-400 peer-checked:bg-white peer-checked:text-indigo-950 peer-checked:shadow-sm rounded-xl transition-all">
-                                    Weekdays</div>
-                            </label>
-                            <label class="flex-1 cursor-pointer">
-                                <input type="radio" name="availability" value="Remote" class="sr-only peer">
-                                <div
-                                    class="py-3 text-center text-[10px] font-black uppercase text-slate-400 peer-checked:bg-white peer-checked:text-indigo-950 peer-checked:shadow-sm rounded-xl transition-all">
-                                    Remote</div>
-                            </label>
+                        <div id="other-input-wrapper" style="display: none;" class="transition-all duration-300">
+                            <input type="text" id="other-text-input" placeholder="Please specify your interest..."
+                                class="w-full mt-2 px-4 py-3 rounded-xl border border-slate-200 bg-white text-sm focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 outline-none transition-all placeholder:text-slate-400">
                         </div>
                     </div>
 
-                    <div class="space-y-1">
-                        <label class="text-[9px] font-black uppercase tracking-widest text-slate-400 ml-4">What
-                            motivates you to join?</label>
-                        <textarea name="motivation" rows="3"
-                            class="w-full px-6 py-4 bg-slate-50 border border-slate-200 rounded-2xl focus:bg-white focus:border-orange-800 outline-none transition-all text-indigo-950 font-medium resize-none"></textarea>
+                    <div class="grid sm:grid-cols-2 gap-5">
+                        <div class="space-y-4">
+                            <label
+                                class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Availability</label>
+                            <div class="flex p-1.5 bg-slate-100 rounded-2xl">
+                                <label class="flex-1 cursor-pointer">
+                                    <input type="radio" name="availability" value="Weekends" class="sr-only peer"
+                                        checked>
+                                    <div
+                                        class="py-3 text-center text-[10px] font-black uppercase text-slate-400 peer-checked:bg-white peer-checked:text-indigo-950 peer-checked:shadow-sm rounded-xl transition-all">
+                                        Weekends</div>
+                                </label>
+                                <label class="flex-1 cursor-pointer">
+                                    <input type="radio" name="availability" value="Weekdays" class="sr-only peer">
+                                    <div
+                                        class="py-3 text-center text-[10px] font-black uppercase text-slate-400 peer-checked:bg-white peer-checked:text-indigo-950 peer-checked:shadow-sm rounded-xl transition-all">
+                                        Weekdays</div>
+                                </label>
+                                <label class="flex-1 cursor-pointer">
+                                    <input type="radio" name="availability" value="Remote" class="sr-only peer">
+                                    <div
+                                        class="py-3 text-center text-[10px] font-black uppercase text-slate-400 peer-checked:bg-white peer-checked:text-indigo-950 peer-checked:shadow-sm rounded-xl transition-all">
+                                        Remote</div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="space-y-1">
+                            <label
+                                class="text-[9px] font-black uppercase tracking-widest text-slate-400 ml-4">Motivation</label>
+                            <textarea name="motivation" rows="2" placeholder="Why join us?"
+                                class="w-full px-6 py-3 bg-slate-50 border border-slate-200 rounded-2xl focus:bg-white focus:border-orange-800 outline-none transition-all text-indigo-950 font-medium resize-none"></textarea>
+                        </div>
                     </div>
 
-                    <button type="submit" id="submit-btn"
+                    <button type="submit"
                         class="w-full bg-indigo-950 hover:bg-orange-800 text-white py-5 rounded-2xl font-black text-[11px] uppercase tracking-[0.2em] shadow-xl transition-all duration-300 flex items-center justify-center gap-3 group">
-                        <span id="btn-text">Join the Movement</span>
+                        <span>Join the Movement</span>
                         <i class="fa-solid fa-arrow-right-long transition-transform group-hover:translate-x-2"></i>
                     </button>
 
@@ -840,20 +881,16 @@
                             class="text-[#E4405F] text-2xl hover:scale-125 transition-transform" aria-label="Instagram">
                             <i class="fa-brands fa-instagram"></i>
                         </a>
-
-                        <a href="https://www.linkedin.com/in/irsc-mumbai-aa00303b8?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                        <a href="https://www.linkedin.com/in/irsc-mumbai-aa00303b8"
                             class="text-[#0A66C2] text-2xl hover:scale-125 transition-transform" aria-label="LinkedIn">
                             <i class="fa-brands fa-linkedin"></i>
                         </a>
-
-                        <a href="https://youtube.com/@irscmumbai?si=sR9dMO1p5fFrr94H"
+                        <a href="https://youtube.com/@irscmumbai"
                             class="text-[#FF0000] text-2xl hover:scale-125 transition-transform" aria-label="YouTube">
                             <i class="fa-brands fa-youtube"></i>
                         </a>
                     </div>
                 </form>
-
-
             </div>
         </div>
     </section>
@@ -970,49 +1007,85 @@
 
                             formIds.forEach(id => {
                                 const form = document.getElementById(id);
+                                if (!form) return;
 
-                                if (form) {
-                                    form.addEventListener('submit', async (e) => {
-                                        e.preventDefault();
+                                form.addEventListener('submit', async (e) => {
+                                    e.preventDefault();
 
-                                        const btn = form.querySelector('button[type="submit"]');
-                                        const btnText = btn.querySelector('span') || btn;
-                                        const originalText = btnText.innerText;
+                                    const btn = form.querySelector('button[type="submit"]');
+                                    const btnText = btn.querySelector('span') || btn;
+                                    const originalText = btnText.innerText;
 
-                                        // Loading State
-                                        btnText.innerText = "PROCESSING...";
-                                        btn.disabled = true;
-                                        btn.style.opacity = "0.7";
+                                    // Loading State
+                                    btnText.innerText = "PROCESSING...";
+                                    btn.disabled = true;
+                                    btn.style.opacity = "0.7";
 
-                                        try {
-                                            const formData = new FormData(form);
-                                            const type = formData.get('formType'); // Get the hidden input value
+                                    try {
+                                        let formData = new FormData(form);
+                                        const type = formData.get('formType');
 
-                                            // Send data
-                                            await fetch(SCRIPT_URL, {
-                                                method: 'POST',
-                                                body: formData,
-                                                mode: 'no-cors'
-                                            });
+                                        // --- SPECIAL LOGIC FOR JOIN-FORM INTERESTS ---
+                                        if (id === 'join-form') {
+                                            const otherCheck = document.getElementById('toggle-other');
+                                            const otherText = document.getElementById('other-text-input').value.trim();
 
-                                            // 3. Show customized success message
-                                            const msg = successMessages[type] || "Successfully submitted!";
-                                            alert(msg);
+                                            // Get all checked interests from the form
+                                            let interests = formData.getAll('interests');
 
-                                            form.reset();
+                                            // If "Other" is checked and text is provided, swap "Other" for the actual text
+                                            if (otherCheck && otherCheck.checked && otherText !== "") {
+                                                interests = interests.map(val => val === "Other" ? `Other: ${otherText}` : val);
+                                            }
 
-                                        } catch (err) {
-                                            console.error("Submission error:", err);
-                                            alert("Submission failed. Please check your connection and try again.");
-                                        } finally {
-                                            // Reset Button
-                                            btnText.innerText = originalText;
-                                            btn.disabled = false;
-                                            btn.style.opacity = "1";
+                                            // Delete the old multi-value entries and set as a single comma-separated string
+                                            formData.delete('interests');
+                                            formData.set('interests', interests.join(', '));
                                         }
-                                    });
-                                }
+
+                                        // Send data
+                                        await fetch(SCRIPT_URL, {
+                                            method: 'POST',
+                                            body: formData,
+                                            mode: 'no-cors'
+                                        });
+
+                                        // Show customized success message
+                                        const msg = successMessages[type] || "Successfully submitted!";
+                                        alert(msg);
+
+                                        form.reset();
+
+                                        // Hide "Other" field if it was open
+                                        const otherWrapper = document.getElementById('other-input-wrapper');
+                                        if (otherWrapper) otherWrapper.style.display = 'none';
+
+                                    } catch (err) {
+                                        console.error("Submission error:", err);
+                                        alert("Submission failed. Please check your connection and try again.");
+                                    } finally {
+                                        // Reset Button
+                                        btnText.innerText = originalText;
+                                        btn.disabled = false;
+                                        btn.style.opacity = "1";
+                                    }
+                                });
                             });
+
+                            const otherToggle = document.getElementById('toggle-other');
+                            if (otherToggle) {
+                                otherToggle.addEventListener('change', function () {
+                                    const wrapper = document.getElementById('other-input-wrapper');
+                                    const textInput = document.getElementById('other-text-input');
+                                    if (this.checked) {
+                                        wrapper.style.display = 'block';
+                                        textInput.focus();
+                                    } else {
+                                        wrapper.style.display = 'none';
+                                        textInput.value = '';
+                                    }
+                                });
+                            }
                         </script>
                     </div>
                 </div>
