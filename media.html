@@ -460,14 +460,14 @@
             <h2
                 class="text-[10px] font-black uppercase tracking-[0.4em] text-slate-500 mb-6 flex items-center gap-3 justify-center md:justify-start">
                 <span class="w-8 h-[1px] bg-gradient-to-r from-cyan-500 to-amber-500"></span>
-                Press Room
+                Media
             </h2>
 
             <h1
                 class="text-5xl md:text-8xl mb-8 font-extrabold leading-[1.05] tracking-tighter text-slate-950 text-center md:text-left">
                 News & <br>
                 <span
-                    class="italic text-transparent bg-clip-text bg-gradient-to-r from-[#fcd34d] via-[#d97706] to-[#b45309]">
+                    class="italic inline-block pr-4 text-transparent bg-clip-text bg-gradient-to-r from-[#fcd34d] via-[#d97706] to-[#b45309] tracking-tight">
                     Official Statements.
                 </span>
             </h1>
@@ -652,71 +652,71 @@
                         </div>
 
                         <form id="subscribe-form" class="space-y-4">
-    <input type="hidden" name="formType" value="subscribe">
+                            <input type="hidden" name="formType" value="subscribe">
 
-    <div class="space-y-2">
-        <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">
-            Email Address
-        </label>
-        <input type="email" name="registryEmail" placeholder="Enter Email Address"
-            class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-xl text-sm outline-none transition-all placeholder:text-slate-400 font-medium"
-            required />
-    </div>
+                            <div class="space-y-2">
+                                <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">
+                                    Email Address
+                                </label>
+                                <input type="email" name="registryEmail" placeholder="Enter Email Address"
+                                    class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-xl text-sm outline-none transition-all placeholder:text-slate-400 font-medium"
+                                    required />
+                            </div>
 
-    <button type="submit" id="sub-btn"
-        class="w-full py-4 bg-[#C69214] text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-xl transition-all hover:bg-[#B3850C] active:scale-[0.98] shadow-lg shadow-[#C69214]/20">
-        <span id="sub-btn-text">Subscribe</span>
-    </button>
-</form>
+                            <button type="submit" id="sub-btn"
+                                class="w-full py-4 bg-[#C69214] text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-xl transition-all hover:bg-[#B3850C] active:scale-[0.98] shadow-lg shadow-[#C69214]/20">
+                                <span id="sub-btn-text">Subscribe</span>
+                            </button>
+                        </form>
 
-<script>
-    const APP_URL = "https://script.google.com/macros/s/AKfycbxy86RuzGNvuGFojClvCwu8I8P2jkDxm3bncuUcBVpgSE5tyKqO0hCPo-c0lzu0Y7LoJw/exec"; 
+                        <script>
+                            const APP_URL = "https://script.google.com/macros/s/AKfycbxy86RuzGNvuGFojClvCwu8I8P2jkDxm3bncuUcBVpgSE5tyKqO0hCPo-c0lzu0Y7LoJw/exec";
 
-    document.querySelectorAll('form').forEach(form => {
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            const btn = form.querySelector('button[type="submit"]');
-            const btnText = btn.querySelector('span');
-            const originalText = btnText ? btnText.innerText : "Submit";
+                            document.querySelectorAll('form').forEach(form => {
+                                form.addEventListener('submit', async (e) => {
+                                    e.preventDefault();
 
-            // 1. Loading State
-            if(btnText) btnText.innerText = "SENDING...";
-            btn.disabled = true;
-            btn.style.opacity = "0.7";
+                                    const btn = form.querySelector('button[type="submit"]');
+                                    const btnText = btn.querySelector('span');
+                                    const originalText = btnText ? btnText.innerText : "Submit";
 
-            try {
-                const formData = new FormData(form);
-                
-                await fetch(APP_URL, { 
-                    method: 'POST', 
-                    body: formData,
-                    mode: 'no-cors' 
-                });
+                                    // 1. Loading State
+                                    if (btnText) btnText.innerText = "SENDING...";
+                                    btn.disabled = true;
+                                    btn.style.opacity = "0.7";
 
-                // 3. Success UI
-                alert("Successfully submitted! Thank you.");
-                form.reset();
+                                    try {
+                                        const formData = new FormData(form);
 
-            } catch (err) {
-                alert("There was an error. Please check your connection.");
-                console.error("Submission Error:", err);
-            } finally {
-                // 4. Reset Button
-                if(btnText) btnText.innerText = originalText;
-                btn.disabled = false;
-                btn.style.opacity = "1";
-            }
-        });
-    });
-</script>
+                                        await fetch(APP_URL, {
+                                            method: 'POST',
+                                            body: formData,
+                                            mode: 'no-cors'
+                                        });
+
+                                        // 3. Success UI
+                                        alert("Successfully submitted! Thank you.");
+                                        form.reset();
+
+                                    } catch (err) {
+                                        alert("There was an error. Please check your connection.");
+                                        console.error("Submission Error:", err);
+                                    } finally {
+                                        // 4. Reset Button
+                                        if (btnText) btnText.innerText = originalText;
+                                        btn.disabled = false;
+                                        btn.style.opacity = "1";
+                                    }
+                                });
+                            });
+                        </script>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-     <footer class="bg-[#050617] py-24 text-white font-sans relative overflow-hidden">
+    <footer class="bg-[#050617] py-24 text-white font-sans relative overflow-hidden">
         <div
             class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-orange-500/50 to-transparent">
         </div>
@@ -781,7 +781,8 @@
                     <h6 class="text-[10px] font-black uppercase tracking-[0.3em] text-orange-500">Foundation</h6>
                     <ul class="space-y-4 text-sm font-medium text-white/60">
                         <li><a href="about.html"
-                                class="hover:text-white hover:-translate-x-1 transition-all inline-block">About Us</a></li>
+                                class="hover:text-white hover:-translate-x-1 transition-all inline-block">About Us</a>
+                        </li>
                         <!-- <li><a href="reports.html"
                                 class="hover:text-white hover:-translate-x-1 transition-all inline-block">Impact &
                                 Transparency</a></li> -->

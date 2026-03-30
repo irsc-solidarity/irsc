@@ -458,8 +458,11 @@
                         us</h2>
                     <h1
                         class="text-5xl md:text-7xl text-slate-950 mb-10 leading-[0.9] tracking-tighter font-extrabold font-serif">
-                        Let's build a <span
-                            class="italic text-transparent bg-clip-text bg-gradient-to-r from-[#fcd34d] via-[#d97706] to-[#b45309]">secure</span>
+                        Let's build a
+                        <span
+                            class="italic inline-block pr-[0.15em] text-transparent bg-clip-text bg-gradient-to-r from-[#fcd34d] via-[#d97706] to-[#b45309]">
+                            secure
+                        </span>
                         Mumbai.
                     </h1>
                 </div>
@@ -520,13 +523,13 @@
                         <div class="space-y-2">
                             <label class="text-[10px] font-black uppercase tracking-widest text-slate-500 ml-2">Full
                                 Name</label>
-                            <input type="text" name="fullName" placeholder="John Doe" required
+                            <input type="text" name="fullName" placeholder="Enter Name" required
                                 class="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:bg-white focus:border-[#C69214] transition-all">
                         </div>
                         <div class="space-y-2">
                             <label
                                 class="text-[10px] font-black uppercase tracking-widest text-slate-500 ml-2">Email</label>
-                            <input type="email" name="email" placeholder="john@mumbai.com" required
+                            <input type="email" name="email" placeholder="Enter Email Address" required
                                 class="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:bg-white focus:border-[#C69214] transition-all">
                         </div>
                     </div>
@@ -553,7 +556,7 @@
                     </button>
                 </form>
 
-                
+
             </div>
         </div>
     </main>
@@ -639,87 +642,87 @@
                             </p> -->
                         </div>
 
-                        
-                         <form id="subscribe-form" class="space-y-4">
-    <input type="hidden" name="formType" value="subscribe">
 
-    <div class="space-y-2">
-        <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">
-            Email Address
-        </label>
-        <input type="email" name="registryEmail" placeholder="Enter Email Address"
-            class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-xl text-sm outline-none transition-all placeholder:text-slate-400 font-medium"
-            required />
-    </div>
+                        <form id="subscribe-form" class="space-y-4">
+                            <input type="hidden" name="formType" value="subscribe">
 
-    <button type="submit" id="sub-btn"
-        class="w-full py-4 bg-[#C69214] text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-xl transition-all hover:bg-[#B3850C] active:scale-[0.98] shadow-lg shadow-[#C69214]/20">
-        <span id="sub-btn-text">Subscribe</span>
-    </button>
-</form>
+                            <div class="space-y-2">
+                                <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">
+                                    Email Address
+                                </label>
+                                <input type="email" name="registryEmail" placeholder="Enter Email Address"
+                                    class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-xl text-sm outline-none transition-all placeholder:text-slate-400 font-medium"
+                                    required />
+                            </div>
+
+                            <button type="submit" id="sub-btn"
+                                class="w-full py-4 bg-[#C69214] text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-xl transition-all hover:bg-[#B3850C] active:scale-[0.98] shadow-lg shadow-[#C69214]/20">
+                                <span id="sub-btn-text">Subscribe</span>
+                            </button>
+                        </form>
 
 
-<script>
-                    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw2EvMST_G-h_fItGmSimydmgWllj9gb10qTC8i2-kI65qlSr9qnKGaXw8IshCUgBqESQ/exec";
+                        <script>
+                            const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw2EvMST_G-h_fItGmSimydmgWllj9gb10qTC8i2-kI65qlSr9qnKGaXw8IshCUgBqESQ/exec";
 
-                    // 1. Define custom messages for each formType
-                    const successMessages = {
-                        'donation': "Thank you for your generous contribution! Your details have been recorded.",
-                        'subscribe': "You've successfully joined our mailing list. Stay tuned!",
-                        'join': "Application received! We'll review your details and get back to you soon.",
-                        'contact': "Message sent! Our team will respond to your inquiry shortly."
-                    };
+                            // 1. Define custom messages for each formType
+                            const successMessages = {
+                                'donation': "Thank you for your generous contribution! Your details have been recorded.",
+                                'subscribe': "You've successfully joined our mailing list. Stay tuned!",
+                                'join': "Application received! We'll review your details and get back to you soon.",
+                                'contact': "Message sent! Our team will respond to your inquiry shortly."
+                            };
 
-                    // 2. Form IDs to manage (Added contact-form)
-                    const formIds = ['donation-form', 'subscribe-form', 'join-form', 'contact-form'];
+                            // 2. Form IDs to manage (Added contact-form)
+                            const formIds = ['donation-form', 'subscribe-form', 'join-form', 'contact-form'];
 
-                    formIds.forEach(id => {
-                        const form = document.getElementById(id);
+                            formIds.forEach(id => {
+                                const form = document.getElementById(id);
 
-                        if (form) {
-                            form.addEventListener('submit', async (e) => {
-                                e.preventDefault();
+                                if (form) {
+                                    form.addEventListener('submit', async (e) => {
+                                        e.preventDefault();
 
-                                const btn = form.querySelector('button[type="submit"]');
-                                const btnText = btn.querySelector('span') || btn;
-                                const originalText = btnText.innerText;
+                                        const btn = form.querySelector('button[type="submit"]');
+                                        const btnText = btn.querySelector('span') || btn;
+                                        const originalText = btnText.innerText;
 
-                                // Loading State
-                                btnText.innerText = "PROCESSING...";
-                                btn.disabled = true;
-                                btn.style.opacity = "0.7";
+                                        // Loading State
+                                        btnText.innerText = "PROCESSING...";
+                                        btn.disabled = true;
+                                        btn.style.opacity = "0.7";
 
-                                try {
-                                    const formData = new FormData(form);
-                                    const type = formData.get('formType'); // Get the hidden input value
+                                        try {
+                                            const formData = new FormData(form);
+                                            const type = formData.get('formType'); // Get the hidden input value
 
-                                    // Send data
-                                    await fetch(SCRIPT_URL, {
-                                        method: 'POST',
-                                        body: formData,
-                                        mode: 'no-cors'
+                                            // Send data
+                                            await fetch(SCRIPT_URL, {
+                                                method: 'POST',
+                                                body: formData,
+                                                mode: 'no-cors'
+                                            });
+
+                                            // 3. Show customized success message
+                                            const msg = successMessages[type] || "Successfully submitted!";
+                                            alert(msg);
+
+                                            form.reset();
+
+                                        } catch (err) {
+                                            console.error("Submission error:", err);
+                                            alert("Submission failed. Please check your connection and try again.");
+                                        } finally {
+                                            // Reset Button
+                                            btnText.innerText = originalText;
+                                            btn.disabled = false;
+                                            btn.style.opacity = "1";
+                                        }
                                     });
-
-                                    // 3. Show customized success message
-                                    const msg = successMessages[type] || "Successfully submitted!";
-                                    alert(msg);
-
-                                    form.reset();
-
-                                } catch (err) {
-                                    console.error("Submission error:", err);
-                                    alert("Submission failed. Please check your connection and try again.");
-                                } finally {
-                                    // Reset Button
-                                    btnText.innerText = originalText;
-                                    btn.disabled = false;
-                                    btn.style.opacity = "1";
                                 }
                             });
-                        }
-                    });
-                </script>
-                        
+                        </script>
+
                     </div>
                 </div>
             </div>

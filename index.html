@@ -591,7 +591,7 @@
     </script> -->
 
     <section
-        class="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#050505] font-sans selection:bg-indigo-500/30">
+        class="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#050505] font-sans selection:bg-indigo-500/30 py-20">
 
         <div class="absolute inset-0 z-0">
             <img src="./images/home-images.jpg"
@@ -603,10 +603,10 @@
             class="absolute top-[-10%] left-[-10%] w-[600px] h-[600px] bg-indigo-600/10 rounded-full blur-[120px] animate-pulse-slow">
         </div>
 
-        <div class="max-w-[1700px] mx-auto relative z-10 px-8 w-full pt-10 pb-32">
-            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div class="max-w-[1700px] mx-auto relative z-10 px-8 w-full">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
 
-                <div class="lg:col-span-3 space-y-12">
+                <div class="lg:col-span-4 space-y-12">
                     <div class="space-y-8">
                         <div
                             class="inline-flex items-center gap-3 px-4 py-1.5 bg-white/5 border border-white/10 rounded-full backdrop-blur-md">
@@ -654,7 +654,7 @@
                     </div>
                 </div>
 
-                <div class="lg:col-span-9 relative group">
+                <div class="lg:col-span-8 relative group">
                     <div id="cinematic-slider"
                         class="relative aspect-[16/8] rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl bg-slate-900">
 
@@ -675,21 +675,9 @@
                                 class="w-full h-full object-cover scale-110 animate-subtle-zoom">
                         </div>
                         <div class="slide-item absolute inset-0 transition-opacity duration-1000 opacity-0 z-10">
-                            <img src="./images/index-page/first-image-5.jpeg"
-                                class="w-full h-full object-cover scale-110 animate-subtle-zoom">
-                        </div>
-                        <div class="slide-item absolute inset-0 transition-opacity duration-1000 opacity-0 z-10">
                             <img src="./images/index-page/first-image-6.jpeg"
                                 class="w-full h-full object-cover scale-110 animate-subtle-zoom">
                         </div>
-                        <!-- <div class="slide-item absolute inset-0 transition-opacity duration-1000 opacity-0 z-10">
-                            <img src="./images/index-page/first-image-7.jpeg"
-                                class="w-full h-full object-cover scale-110 animate-subtle-zoom">
-                        </div> -->
-                        <!-- <div class="slide-item absolute inset-0 transition-opacity duration-1000 opacity-0 z-10">
-                            <img src="./images/index-page/first-image-8.jpeg"
-                                class="w-full h-full object-cover scale-110 animate-subtle-zoom">
-                        </div> -->
                         <div class="slide-item absolute inset-0 transition-opacity duration-1000 opacity-0 z-10">
                             <img src="./images/index-page/first-image-9.jpeg"
                                 class="w-full h-full object-cover scale-110 animate-subtle-zoom">
@@ -698,35 +686,52 @@
                             <img src="./images/index-page/first-image-10.jpeg"
                                 class="w-full h-full object-cover scale-110 animate-subtle-zoom">
                         </div>
+                        <div class="slide-item absolute inset-0 transition-opacity duration-1000 opacity-0 z-10">
+                            <img src="./images/index-page/first-image-11.jpeg"
+                                class="w-full h-full object-cover scale-110 animate-subtle-zoom">
+                        </div>
+                        <div class="slide-item absolute inset-0 transition-opacity duration-1000 opacity-0 z-10">
+                            <img src="./images/index-page/first-image-12.jpeg"
+                                class="w-full h-full object-cover scale-110 animate-subtle-zoom">
+                        </div>
+                        <div class="slide-item absolute inset-0 transition-opacity duration-1000 opacity-0 z-10">
+                            <img src="./images/index-page/first-image-13.jpeg"
+                                class="w-full h-full object-cover scale-110 animate-subtle-zoom">
+                        </div>
+                        <div class="slide-item absolute inset-0 transition-opacity duration-1000 opacity-0 z-10">
+                            <img src="./images/index-page/first-image-14.jpeg"
+                                class="w-full h-full object-cover scale-110 animate-subtle-zoom">
+                        </div>
 
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent z-20"></div>
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-20">
+                        </div>
 
-                        <div class="absolute top-4 right-4 md:top-8 md:right-8 z-30">
+                        <div class="absolute top-8 right-8 z-30 hidden md:flex">
                             <a href="https://www.instagram.com/irsc_mumbai" target="_blank"
-                                class="hidden md:flex w-8 h-8 md:w-11 md:h-11 rounded-xl md:rounded-2xl bg-[#E4405F] items-center justify-center text-white shadow-lg hover:scale-110 transition-all">
-                                <i class="fa-brands fa-instagram text-sm md:text-base"></i>
+                                class="flex w-12 h-12 rounded-2xl bg-[#E4405F] items-center justify-center text-white shadow-xl hover:scale-110 transition-all duration-300">
+                                <i class="fa-brands fa-instagram text-xl"></i>
                             </a>
                         </div>
                     </div>
                 </div>
-
-                <script>
-                        (function () {
-                            const slides = document.querySelectorAll('#cinematic-slider .slide-item');
-                            let currentIndex = 0;
-                            function nextSlide() {
-                                if (slides.length === 0) return;
-                                slides[currentIndex].classList.replace('opacity-100', 'opacity-0');
-                                currentIndex = (currentIndex + 1) % slides.length;
-                                slides[currentIndex].classList.replace('opacity-0', 'opacity-100');
-                            }
-                            setInterval(nextSlide, 5000);
-                        })();
-                </script>
             </div>
         </div>
-    </section>
 
+        <script>
+                (function () {
+                    const slides = document.querySelectorAll('#cinematic-slider .slide-item');
+                    let currentIndex = 0;
+                    function nextSlide() {
+                        if (slides.length === 0) return;
+                        slides[currentIndex].classList.replace('opacity-100', 'opacity-0');
+                        currentIndex = (currentIndex + 1) % slides.length;
+                        slides[currentIndex].classList.replace('opacity-0', 'opacity-100');
+                    }
+                    setInterval(nextSlide, 5000);
+                })();
+        </script>
+    </section>
 
     <section class="relative py-24 bg-[#F5F7FA] overflow-hidden border-b border-slate-200">
         <div class="absolute inset-0 bg-gradient-to-br from-[#F5F7FA] via-[#DCE1E8] to-[#C9CED6] pointer-events-none">
