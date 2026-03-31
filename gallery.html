@@ -454,6 +454,7 @@
         <div id="gallery-grid" class="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-10">
 
             <div class="gallery-item bg-white rounded-lg overflow-hidden border border-slate-200 shadow-sm" id="rec-1">
+
                 <div class="preview-trigger cursor-pointer relative aspect-[4/5] overflow-hidden"
                     onclick="toggleExpand('rec-1')">
                     <img src="images/events/event-1/image-1.jpg" class="w-full h-full object-cover">
@@ -462,51 +463,57 @@
                         <h4 class="text-white font-serif text-sm md:text-lg">Interfaith Holi-Easter-Ramadan</h4>
                     </div>
                 </div>
+
                 <div
-                    class="expanded-content opacity-0 invisible max-h-0 overflow-hidden bg-white transition-all duration-500">
-                    <div class="flex flex-col lg:flex-row lg:h-full relative">
+                    class="expanded-content h-0 opacity-0 invisible overflow-hidden bg-white transition-all duration-500 ease-in-out">
+                    <div class="flex flex-col lg:flex-row lg:h-[600px] relative w-full">
+
                         <button onclick="toggleExpand('rec-1')"
-                            class="absolute top-4 right-4 z-50 w-10 h-10 flex items-center justify-center bg-white/90 rounded-full shadow-xl">
+                            class="absolute top-4 right-4 z-50 w-10 h-10 flex items-center justify-center bg-white/90 rounded-full shadow-xl hover:bg-white transition-colors">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-slate-900" fill="none"
                                 viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
                                     d="M6 18L18 6M6 6l12 12" />
                             </svg>
                         </button>
-                        <div class="w-full lg:w-[65%] bg-black flex items-center justify-center">
+
+                        <div
+                            class="w-full lg:w-[65%] bg-black flex items-center justify-center overflow-hidden h-[300px] lg:h-full">
                             <img id="hero-rec-1" src="images/events/event-1/image-1.jpg"
                                 class="w-full h-full object-contain">
                         </div>
-                        <div class="w-full lg:w-[35%] flex flex-col bg-white border-l border-slate-100 overflow-y-auto">
-                            <div class="p-6 border-b border-slate-50 flex gap-2 items-center bg-slate-50/50">
-                                <img src="images/events/event-1/image-1.jpg" onclick="swapImg('rec-1', this)"
-                                    class="w-10 h-10 rounded border-2 border-purple-600 object-cover cursor-pointer hover:opacity-80">
-                                <img src="images/events/event-1/image-2.jpg" onclick="swapImg('rec-1', this)"
-                                    class="w-10 h-10 rounded border-2 border-transparent object-cover cursor-pointer hover:opacity-80">
-                                <img src="images/events/event-1/image-3.jpg" onclick="swapImg('rec-1', this)"
-                                    class="w-10 h-10 rounded border-2 border-transparent object-cover cursor-pointer hover:opacity-80">
-                                <img src="images/events/event-1/image-4.jpg" onclick="swapImg('rec-1', this)"
-                                    class="w-10 h-10 rounded border-2 border-transparent object-cover cursor-pointer hover:opacity-80">
-                                <img src="images/events/event-1/image-5.jpg" onclick="swapImg('rec-1', this)"
-                                    class="w-10 h-10 rounded border-2 border-transparent object-cover cursor-pointer hover:opacity-80">
-                                <div class="flex gap-2 ml-auto">
-                                    <a href="#"
-                                        class="w-8 h-8 flex items-center justify-center rounded-full bg-[#1877F2]/10"><img
-                                            src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
-                                            class="w-4 h-4"></a>
-                                    <a href="#"
-                                        class="w-8 h-8 flex items-center justify-center rounded-full bg-[#E4405F]/10"><img
-                                            src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
-                                            class="w-4 h-4"></a>
+
+                        <div class="w-full lg:w-[35%] flex flex-col bg-white border-l border-slate-100 h-full">
+
+                            <div class="p-4 border-b border-slate-50 flex flex-wrap gap-2 items-center bg-slate-50/50">
+                                <div class="flex gap-1.5">
+                                    <img src="images/events/event-1/image-1.jpg" onclick="swapImg('rec-1', this)"
+                                        class="w-8 h-8 lg:w-10 lg:h-10 rounded border-2 border-purple-600 object-cover cursor-pointer hover:scale-105 transition-transform">
+                                    <img src="images/events/event-1/image-2.jpg" onclick="swapImg('rec-1', this)"
+                                        class="w-8 h-8 lg:w-10 lg:h-10 rounded border-2 border-transparent object-cover cursor-pointer hover:scale-105 transition-transform">
+                                </div>
+
+                                <div class="flex items-center gap-4 ml-auto">
+                                    <a href="https://www.instagram.com/irsc_mumbai" target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="text-[#E4405F] hover:scale-125 transition-transform duration-300"
+                                        aria-label="Follow us on Instagram">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            fill="currentColor" viewBox="0 0 448 512">
+                                            <path
+                                                d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+                                        </svg>
+                                    </a>
                                 </div>
                             </div>
-                            <div class="p-8">
-                                <span class="text-[10px] font-medium text-slate-400 uppercase tracking-widest">ID:
-                                    001-A</span>
+
+                            <div class="p-8 overflow-y-auto flex-grow">
                                 <h3 class="font-serif text-3xl text-slate-900 mt-2 mb-4">Interfaith Holi-Easter-Ramadan
                                 </h3>
-                                <!-- <p class="text-slate-600 text-sm leading-relaxed">Dialogue held in Ward C regarding
-                                    cultural heritage and communal harmony.</p> -->
+                                <!-- <p class="text-slate-600 text-sm leading-relaxed">
+                                    A celebration of unity and communal harmony, bringing together diverse traditions to
+                                    share in the spirit of peace and solidarity.
+                                </p> -->
                             </div>
                         </div>
                     </div>
@@ -522,6 +529,7 @@
                         <h4 class="text-white font-serif text-sm md:text-lg">IRSC Advisory Committee Meeting</h4>
                     </div>
                 </div>
+
                 <div
                     class="expanded-content opacity-0 invisible h-0 overflow-hidden bg-white transition-all duration-500">
                     <div class="flex flex-col lg:flex-row lg:h-full relative">
@@ -533,39 +541,47 @@
                                     d="M6 18L18 6M6 6l12 12" />
                             </svg>
                         </button>
+
                         <div class="w-full lg:w-[65%] bg-black flex items-center justify-center">
                             <img id="hero-rec-2" src="./images/events/events-2/image-1.jpeg"
                                 class="w-full h-full object-contain">
                         </div>
+
                         <div class="w-full lg:w-[35%] flex flex-col bg-white border-l border-slate-100 overflow-y-auto">
                             <div class="p-6 border-b border-slate-50 flex gap-2 items-center bg-slate-50/50">
                                 <img src="./images/events/events-2/image-1.jpeg" onclick="swapImg('rec-2', this)"
                                     class="w-10 h-10 rounded border-2 border-purple-600 object-cover cursor-pointer">
                                 <img src="./images/events/events-2/image-2.jpeg" onclick="swapImg('rec-2', this)"
                                     class="w-10 h-10 rounded border-2 border-purple-600 object-cover cursor-pointer">
-                                <div class="flex gap-2 ml-auto">
-                                    <a href="#"
-                                        class="w-8 h-8 flex items-center justify-center rounded-full bg-[#1877F2]/10"><img
-                                            src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
-                                            class="w-4 h-4"></a>
-                                    <a href="#"
-                                        class="w-8 h-8 flex items-center justify-center rounded-full bg-[#E4405F]/10"><img
-                                            src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
-                                            class="w-4 h-4"></a>
+
+                                <div class="flex items-center gap-4 ml-auto">
+                                    <a href="https://www.instagram.com/irsc_mumbai" target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="text-[#E4405F] hover:scale-125 transition-transform duration-300"
+                                        aria-label="Follow us on Instagram">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            fill="currentColor" viewBox="0 0 448 512">
+                                            <path
+                                                d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+                                        </svg>
+                                    </a>
                                 </div>
                             </div>
+
                             <div class="p-8">
-                                <!-- <span class="text-[10px] font-medium text-slate-400 uppercase tracking-widest">ID:
-                                    002-A</span> -->
                                 <h3 class="font-serif text-3xl text-slate-900 mt-2 mb-4">IRSC Advisory Committee Meeting
                                 </h3>
-                                <!-- <p class="text-slate-600 text-sm leading-relaxed">Consultation session with local
-                                    community leaders on civic improvements.</p> -->
+                                <!-- <p class="text-slate-600 text-sm leading-relaxed">
+                                    Consultation session with local community leaders on civic improvements and
+                                    organizational strategy.
+                                </p> -->
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+
 
             <div class="gallery-item bg-white rounded-lg overflow-hidden border border-slate-200 shadow-sm" id="rec-3">
                 <div class="preview-trigger cursor-pointer relative aspect-[4/5] overflow-hidden"
@@ -603,20 +619,22 @@
                                     class="w-10 h-10 rounded border-2 border-purple-600 object-cover cursor-pointer">
                                 <img src="./images/events/events-3/image-5.jpeg" onclick="swapImg('rec-3', this)"
                                     class="w-10 h-10 rounded border-2 border-purple-600 object-cover cursor-pointer">
-                                <div class="flex gap-2 ml-auto">
-                                    <a href="#"
-                                        class="w-8 h-8 flex items-center justify-center rounded-full bg-[#1877F2]/10"><img
-                                            src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
-                                            class="w-4 h-4"></a>
-                                    <a href="#"
-                                        class="w-8 h-8 flex items-center justify-center rounded-full bg-[#E4405F]/10"><img
-                                            src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
-                                            class="w-4 h-4"></a>
+                                <div class="flex items-center gap-4 ml-auto">
+                                    <a href="https://www.instagram.com/irsc_mumbai" target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="text-[#E4405F] hover:scale-125 transition-transform duration-300"
+                                        aria-label="Follow us on Instagram">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            fill="currentColor" viewBox="0 0 448 512">
+                                            <path
+                                                d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+                                        </svg>
+                                    </a>
                                 </div>
                             </div>
                             <div class="p-8">
-                                <span class="text-[10px] font-medium text-slate-400 uppercase tracking-widest">ID:
-                                    003-A</span>
+                                <!-- <span class="text-[10px] font-medium text-slate-400 uppercase tracking-widest">ID:
+                                    003-A</span> -->
                                 <h3 class="font-serif text-3xl text-slate-900 mt-2 mb-4">IRSC event 14 October 2023</h3>
                                 <!-- <p class="text-slate-600 text-sm leading-relaxed">Collective reflection in the community
                                     center.</p> -->
@@ -656,15 +674,17 @@
                                     class="w-10 h-10 rounded border-2 border-purple-600 object-cover cursor-pointer">
                                 <img src="./images/events/event-4/image-2.jpeg" onclick="swapImg('rec-4', this)"
                                     class="w-10 h-10 rounded border-2 border-purple-600 object-cover cursor-pointer">
-                                <div class="flex gap-2 ml-auto">
-                                    <a href="#"
-                                        class="w-8 h-8 flex items-center justify-center rounded-full bg-[#1877F2]/10"><img
-                                            src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
-                                            class="w-4 h-4"></a>
-                                    <a href="#"
-                                        class="w-8 h-8 flex items-center justify-center rounded-full bg-[#E4405F]/10"><img
-                                            src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
-                                            class="w-4 h-4"></a>
+                                <div class="flex items-center gap-4 ml-auto">
+                                    <a href="https://www.instagram.com/irsc_mumbai" target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="text-[#E4405F] hover:scale-125 transition-transform duration-300"
+                                        aria-label="Follow us on Instagram">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            fill="currentColor" viewBox="0 0 448 512">
+                                            <path
+                                                d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+                                        </svg>
+                                    </a>
                                 </div>
                             </div>
                             <div class="p-8">
@@ -717,16 +737,16 @@
                                 <img src="./images/events/events-6/image-7.jpeg" onclick="swapImg('rec-6', this)"
                                     class="w-10 h-10 rounded border-2 border-purple-600 object-cover cursor-pointer hover:opacity-80 transition-opacity">
 
-                                <div class="flex gap-2 ml-auto">
-                                    <a href="#"
-                                        class="w-8 h-8 flex items-center justify-center rounded-full bg-[#1877F2]/10 hover:bg-[#1877F2]/20 transition-colors">
-                                        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
-                                            class="w-4 h-4">
-                                    </a>
-                                    <a href="#"
-                                        class="w-8 h-8 flex items-center justify-center rounded-full bg-[#E4405F]/10 hover:bg-[#E4405F]/20 transition-colors">
-                                        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
-                                            class="w-4 h-4">
+                                <div class="flex items-center gap-4 ml-auto">
+                                    <a href="https://www.instagram.com/irsc_mumbai" target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="text-[#E4405F] hover:scale-125 transition-transform duration-300"
+                                        aria-label="Follow us on Instagram">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            fill="currentColor" viewBox="0 0 448 512">
+                                            <path
+                                                d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+                                        </svg>
                                     </a>
                                 </div>
                             </div>
@@ -781,16 +801,16 @@
                                 <img src="./images/events/events-7/image-4.jpg" onclick="swapImg('rec-7', this)"
                                     class="w-10 h-10 rounded border-2 border-purple-600 object-cover cursor-pointer">
 
-                                <div class="flex gap-2 ml-auto">
-                                    <a href="#"
-                                        class="w-8 h-8 flex items-center justify-center rounded-full bg-[#1877F2]/10">
-                                        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
-                                            class="w-4 h-4">
-                                    </a>
-                                    <a href="#"
-                                        class="w-8 h-8 flex items-center justify-center rounded-full bg-[#E4405F]/10">
-                                        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
-                                            class="w-4 h-4">
+                                <div class="flex items-center gap-4 ml-auto">
+                                    <a href="https://www.instagram.com/irsc_mumbai" target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="text-[#E4405F] hover:scale-125 transition-transform duration-300"
+                                        aria-label="Follow us on Instagram">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            fill="currentColor" viewBox="0 0 448 512">
+                                            <path
+                                                d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+                                        </svg>
                                     </a>
                                 </div>
                             </div>
@@ -848,16 +868,16 @@
                                 <img src="./images/events/events-8/image-4.jpg" onclick="swapImg('rec-8', this)"
                                     class="w-10 h-10 rounded border-2 border-purple-600 object-cover cursor-pointer">
 
-                                <div class="flex gap-2 ml-auto">
-                                    <a href="#"
-                                        class="w-8 h-8 flex items-center justify-center rounded-full bg-[#1877F2]/10">
-                                        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
-                                            class="w-4 h-4">
-                                    </a>
-                                    <a href="#"
-                                        class="w-8 h-8 flex items-center justify-center rounded-full bg-[#E4405F]/10">
-                                        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
-                                            class="w-4 h-4">
+                                <div class="flex items-center gap-4 ml-auto">
+                                    <a href="https://www.instagram.com/irsc_mumbai" target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="text-[#E4405F] hover:scale-125 transition-transform duration-300"
+                                        aria-label="Follow us on Instagram">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            fill="currentColor" viewBox="0 0 448 512">
+                                            <path
+                                                d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+                                        </svg>
                                     </a>
                                 </div>
                             </div>
@@ -914,16 +934,16 @@
                                 <img src="./images/events/events-9/image-7.jpeg" onclick="swapImg('rec-9', this)"
                                     class="w-10 h-10 rounded border-2 border-purple-600 object-cover cursor-pointer">
 
-                                <div class="flex gap-2 ml-auto">
-                                    <a href="#"
-                                        class="w-8 h-8 flex items-center justify-center rounded-full bg-[#1877F2]/10">
-                                        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
-                                            class="w-4 h-4">
-                                    </a>
-                                    <a href="#"
-                                        class="w-8 h-8 flex items-center justify-center rounded-full bg-[#E4405F]/10">
-                                        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
-                                            class="w-4 h-4">
+                                <div class="flex items-center gap-4 ml-auto">
+                                    <a href="https://www.instagram.com/irsc_mumbai" target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="text-[#E4405F] hover:scale-125 transition-transform duration-300"
+                                        aria-label="Follow us on Instagram">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            fill="currentColor" viewBox="0 0 448 512">
+                                            <path
+                                                d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+                                        </svg>
                                     </a>
                                 </div>
                             </div>
@@ -989,16 +1009,16 @@
                                 <img src="./images/events/events-10/image-10.jpeg" onclick="swapImg('rec-10', this)"
                                     class="w-10 h-10 rounded border-2 border-purple-600 object-cover cursor-pointer">
 
-                                <div class="flex gap-2 ml-auto">
-                                    <a href="#"
-                                        class="w-8 h-8 flex items-center justify-center rounded-full bg-[#1877F2]/10">
-                                        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
-                                            class="w-4 h-4">
-                                    </a>
-                                    <a href="#"
-                                        class="w-8 h-8 flex items-center justify-center rounded-full bg-[#E4405F]/10">
-                                        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
-                                            class="w-4 h-4">
+                                <div class="flex items-center gap-4 ml-auto">
+                                    <a href="https://www.instagram.com/irsc_mumbai" target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="text-[#E4405F] hover:scale-125 transition-transform duration-300"
+                                        aria-label="Follow us on Instagram">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            fill="currentColor" viewBox="0 0 448 512">
+                                            <path
+                                                d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+                                        </svg>
                                     </a>
                                 </div>
                             </div>
@@ -1066,16 +1086,16 @@
                                 <img src="./images/events/events-11/image-11.jpeg" onclick="swapImg('rec-11', this)"
                                     class="w-10 h-10 rounded border-2 border-purple-600 object-cover cursor-pointer">
 
-                                <div class="flex gap-2 ml-auto">
-                                    <a href="#"
-                                        class="w-8 h-8 flex items-center justify-center rounded-full bg-[#1877F2]/10">
-                                        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
-                                            class="w-4 h-4">
-                                    </a>
-                                    <a href="#"
-                                        class="w-8 h-8 flex items-center justify-center rounded-full bg-[#E4405F]/10">
-                                        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
-                                            class="w-4 h-4">
+                                <div class="flex items-center gap-4 ml-auto">
+                                    <a href="https://www.instagram.com/irsc_mumbai" target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="text-[#E4405F] hover:scale-125 transition-transform duration-300"
+                                        aria-label="Follow us on Instagram">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            fill="currentColor" viewBox="0 0 448 512">
+                                            <path
+                                                d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+                                        </svg>
                                     </a>
                                 </div>
                             </div>
@@ -1125,15 +1145,17 @@
                                     class="w-10 h-10 rounded border-2 border-purple-600 object-cover cursor-pointer">
                                 <img src="./images/events/events-5/image-3.jpg" onclick="swapImg('rec-5', this)"
                                     class="w-10 h-10 rounded border-2 border-purple-600 object-cover cursor-pointer">
-                                <div class="flex gap-2 ml-auto">
-                                    <a href="#"
-                                        class="w-8 h-8 flex items-center justify-center rounded-full bg-[#1877F2]/10"><img
-                                            src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
-                                            class="w-4 h-4"></a>
-                                    <a href="#"
-                                        class="w-8 h-8 flex items-center justify-center rounded-full bg-[#E4405F]/10"><img
-                                            src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
-                                            class="w-4 h-4"></a>
+                                <div class="flex items-center gap-4 ml-auto">
+                                    <a href="https://www.instagram.com/irsc_mumbai" target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="text-[#E4405F] hover:scale-125 transition-transform duration-300"
+                                        aria-label="Follow us on Instagram">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            fill="currentColor" viewBox="0 0 448 512">
+                                            <path
+                                                d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+                                        </svg>
+                                    </a>
                                 </div>
                             </div>
                             <div class="p-8">
@@ -1231,67 +1253,67 @@
                         </div>
 
                         <form id="subscribe-form" class="space-y-4">
-    <input type="hidden" name="formType" value="subscribe">
+                            <input type="hidden" name="formType" value="subscribe">
 
-    <div class="space-y-2">
-        <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">
-            Email Address
-        </label>
-        <input type="email" name="registryEmail" placeholder="Enter Email Address"
-            class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-xl text-sm outline-none transition-all placeholder:text-slate-400 font-medium"
-            required />
-    </div>
+                            <div class="space-y-2">
+                                <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">
+                                    Email Address
+                                </label>
+                                <input type="email" name="registryEmail" placeholder="Enter Email Address"
+                                    class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-xl text-sm outline-none transition-all placeholder:text-slate-400 font-medium"
+                                    required />
+                            </div>
 
-    <button type="submit" id="sub-btn"
-        class="w-full py-4 bg-[#C69214] text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-xl transition-all hover:bg-[#B3850C] active:scale-[0.98] shadow-lg shadow-[#C69214]/20">
-        <span id="sub-btn-text">Subscribe</span>
-    </button>
-</form>
+                            <button type="submit" id="sub-btn"
+                                class="w-full py-4 bg-[#C69214] text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-xl transition-all hover:bg-[#B3850C] active:scale-[0.98] shadow-lg shadow-[#C69214]/20">
+                                <span id="sub-btn-text">Subscribe</span>
+                            </button>
+                        </form>
 
-<script>
-    const APP_URL = "https://script.google.com/macros/s/AKfycbxy86RuzGNvuGFojClvCwu8I8P2jkDxm3bncuUcBVpgSE5tyKqO0hCPo-c0lzu0Y7LoJw/exec"; 
+                        <script>
+                            const APP_URL = "https://script.google.com/macros/s/AKfycbxy86RuzGNvuGFojClvCwu8I8P2jkDxm3bncuUcBVpgSE5tyKqO0hCPo-c0lzu0Y7LoJw/exec";
 
-    document.querySelectorAll('form').forEach(form => {
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            const btn = form.querySelector('button[type="submit"]');
-            const btnText = btn.querySelector('span');
-            const originalText = btnText ? btnText.innerText : "Submit";
+                            document.querySelectorAll('form').forEach(form => {
+                                form.addEventListener('submit', async (e) => {
+                                    e.preventDefault();
 
-            // 1. Loading State
-            if(btnText) btnText.innerText = "SENDING...";
-            btn.disabled = true;
-            btn.style.opacity = "0.7";
+                                    const btn = form.querySelector('button[type="submit"]');
+                                    const btnText = btn.querySelector('span');
+                                    const originalText = btnText ? btnText.innerText : "Submit";
 
-            try {
-                const formData = new FormData(form);
-                
-                // 2. The Request
-                // mode: 'no-cors' is used to prevent browser security blocks 
-                // when sending data to Google Apps Script.
-                await fetch(APP_URL, { 
-                    method: 'POST', 
-                    body: formData,
-                    mode: 'no-cors' 
-                });
+                                    // 1. Loading State
+                                    if (btnText) btnText.innerText = "SENDING...";
+                                    btn.disabled = true;
+                                    btn.style.opacity = "0.7";
 
-                // 3. Success UI
-                alert("Successfully submitted! Thank you.");
-                form.reset();
+                                    try {
+                                        const formData = new FormData(form);
 
-            } catch (err) {
-                alert("There was an error. Please check your connection.");
-                console.error("Submission Error:", err);
-            } finally {
-                // 4. Reset Button
-                if(btnText) btnText.innerText = originalText;
-                btn.disabled = false;
-                btn.style.opacity = "1";
-            }
-        });
-    });
-</script>
+                                        // 2. The Request
+                                        // mode: 'no-cors' is used to prevent browser security blocks 
+                                        // when sending data to Google Apps Script.
+                                        await fetch(APP_URL, {
+                                            method: 'POST',
+                                            body: formData,
+                                            mode: 'no-cors'
+                                        });
+
+                                        // 3. Success UI
+                                        alert("Successfully submitted! Thank you.");
+                                        form.reset();
+
+                                    } catch (err) {
+                                        alert("There was an error. Please check your connection.");
+                                        console.error("Submission Error:", err);
+                                    } finally {
+                                        // 4. Reset Button
+                                        if (btnText) btnText.innerText = originalText;
+                                        btn.disabled = false;
+                                        btn.style.opacity = "1";
+                                    }
+                                });
+                            });
+                        </script>
                     </div>
                 </div>
             </div>
@@ -1421,7 +1443,7 @@
         }
     </script>
 
-     <footer class="bg-[#050617] py-24 text-white font-sans relative overflow-hidden">
+    <footer class="bg-[#050617] py-24 text-white font-sans relative overflow-hidden">
         <div
             class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-orange-500/50 to-transparent">
         </div>
@@ -1486,7 +1508,8 @@
                     <h6 class="text-[10px] font-black uppercase tracking-[0.3em] text-orange-500">Foundation</h6>
                     <ul class="space-y-4 text-sm font-medium text-white/60">
                         <li><a href="about.html"
-                                class="hover:text-white hover:-translate-x-1 transition-all inline-block">About Us</a></li>
+                                class="hover:text-white hover:-translate-x-1 transition-all inline-block">About Us</a>
+                        </li>
                         <!-- <li><a href="reports.html"
                                 class="hover:text-white hover:-translate-x-1 transition-all inline-block">Impact &
                                 Transparency</a></li> -->
