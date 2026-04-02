@@ -742,6 +742,55 @@
                         </div>
                     </div>
 
+                    <div class="space-y-4 mb-6">
+                        <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">I am joining
+                            as a/an</label>
+                        <div class="flex p-1.5 bg-slate-100 rounded-2xl">
+                            <label class="flex-1 cursor-pointer">
+                                <input type="radio" name="category" value="Individual" class="sr-only peer" checked>
+                                <div
+                                    class="category-radio py-3 text-center text-[10px] font-black uppercase text-slate-400 peer-checked:bg-white peer-checked:text-indigo-950 peer-checked:shadow-sm rounded-xl transition-all">
+                                    Individual</div>
+                            </label>
+                            <label class="flex-1 cursor-pointer">
+                                <input type="radio" name="category" value="Religious Organization" class="sr-only peer">
+                                <div
+                                    class="category-radio py-3 text-center text-[10px] font-black uppercase text-slate-400 peer-checked:bg-white peer-checked:text-indigo-950 peer-checked:shadow-sm rounded-xl transition-all">
+                                    Religious Organization</div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div id="org-name-wrapper" style="display: none;"
+                        class="space-y-1 mb-6 transition-all duration-300">
+                        <label class="text-[9px] font-black uppercase tracking-widest text-slate-400 ml-4">Organization
+                            Name</label>
+                        <input type="text" name="organizationName" id="org-name-input"
+                            placeholder="Enter Organization Name"
+                            class="w-full px-6 py-4 bg-slate-50 border border-slate-200 rounded-2xl focus:bg-white focus:border-orange-800 outline-none transition-all text-indigo-950 font-medium">
+                    </div>
+
+                    <script>
+                        // Toggle Organization Name based on Category
+                        const categoryRadios = document.querySelectorAll('input[name="category"]');
+                        const orgWrapper = document.getElementById('org-name-wrapper');
+                        const orgInput = document.getElementById('org-name-input');
+
+                        categoryRadios.forEach(radio => {
+                            radio.addEventListener('change', function () {
+                                if (this.value === 'Religious Organization') {
+                                    orgWrapper.style.display = 'block';
+                                    orgInput.setAttribute('required', 'true');
+                                    orgInput.focus();
+                                } else {
+                                    orgWrapper.style.display = 'none';
+                                    orgInput.removeAttribute('required');
+                                    orgInput.value = ''; // Clear if they switch back to Individual
+                                }
+                            });
+                        });
+                    </script>
+
                     <div class="space-y-4">
                         <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Area of
                             Interest</label>
@@ -1005,86 +1054,117 @@
                         </form>
 
                         <script>
-                            const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw2EvMST_G-h_fItGmSimydmgWllj9gb10qTC8i2-kI65qlSr9qnKGaXw8IshCUgBqESQ/exec";
+                            const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzjlasv00nuG49rUxa_mWVZD6Cr7BidJx0VwEQVQ9IolDSrCbWvOQi1F3YxEnjZMemRqw/exec";
 
                             // 1. Define custom messages for each formType
                             const successMessages = {
-                                'donation': "Thank you for your generous contribution! Your details have been recorded.",
-                                'subscribe': "You've successfully joined our mailing list. Stay tuned!",
+                                'donation': "Thank you for your generous contribution!",
+                                'subscribe': "You've successfully joined our mailing list.",
                                 'join': "Application received! We'll review your details and get back to you soon.",
-                                'contact': "Message sent! Our team will respond to your inquiry shortly."
+                                'contact': "Message sent! Our team will respond shortly."
                             };
 
-                            // 2. Form IDs to manage (Added contact-form)
-                            const formIds = ['donation-form', 'subscribe-form', 'join-form', 'contact-form'];
+                            // --- 1. Toggle Logic for Form Fields ---
+                            const setupJoinFormToggles = () => {
+                                const joinForm = document.getElementById('join-form');
+                                if (!joinForm) return;
 
-                            formIds.forEach(id => {
-                                const form = document.getElementById(id);
-                                if (!form) return;
+                                const orgWrapper = document.getElementById('org-name-wrapper');
+                                const orgInput = document.getElementById('org-name-input');
+                                const otherWrapper = document.getElementById('other-input-wrapper');
+                                const otherInput = document.getElementById('other-text-input');
+                                const otherCheck = document.getElementById('toggle-other');
 
-                                form.addEventListener('submit', async (e) => {
-                                    e.preventDefault();
+                                joinForm.addEventListener('change', (e) => {
+                                    // Toggle Org Name
+                                    if (e.target.name === 'category') {
+                                        const isOrg = e.target.value === 'Religious Organization';
+                                        orgWrapper.style.display = isOrg ? 'block' : 'none';
+                                        orgInput.required = isOrg;
+                                    }
 
-                                    const btn = form.querySelector('button[type="submit"]');
-                                    const btnText = btn.querySelector('span') || btn;
-                                    const originalText = btnText.innerText;
-
-                                    // Loading State
-                                    btnText.innerText = "PROCESSING...";
-                                    btn.disabled = true;
-                                    btn.style.opacity = "0.7";
-
-                                    try {
-                                        let formData = new FormData(form);
-                                        const type = formData.get('formType');
-
-                                        // --- SPECIAL LOGIC FOR JOIN-FORM INTERESTS ---
-                                        if (id === 'join-form') {
-                                            const otherCheck = document.getElementById('toggle-other');
-                                            const otherText = document.getElementById('other-text-input').value.trim();
-
-                                            // Get all checked interests from the form
-                                            let interests = formData.getAll('interests');
-
-                                            // If "Other" is checked and text is provided, swap "Other" for the actual text
-                                            if (otherCheck && otherCheck.checked && otherText !== "") {
-                                                interests = interests.map(val => val === "Other" ? `Other: ${otherText}` : val);
-                                            }
-
-                                            // Delete the old multi-value entries and set as a single comma-separated string
-                                            formData.delete('interests');
-                                            formData.set('interests', interests.join(', '));
-                                        }
-
-                                        // Send data
-                                        await fetch(SCRIPT_URL, {
-                                            method: 'POST',
-                                            body: formData,
-                                            mode: 'no-cors'
-                                        });
-
-                                        // Show customized success message
-                                        const msg = successMessages[type] || "Successfully submitted!";
-                                        alert(msg);
-
-                                        form.reset();
-
-                                        // Hide "Other" field if it was open
-                                        const otherWrapper = document.getElementById('other-input-wrapper');
-                                        if (otherWrapper) otherWrapper.style.display = 'none';
-
-                                    } catch (err) {
-                                        console.error("Submission error:", err);
-                                        alert("Submission failed. Please check your connection and try again.");
-                                    } finally {
-                                        // Reset Button
-                                        btnText.innerText = originalText;
-                                        btn.disabled = false;
-                                        btn.style.opacity = "1";
+                                    // Toggle "Other" Interest
+                                    if (e.target === otherCheck) {
+                                        otherWrapper.style.display = otherCheck.checked ? 'block' : 'none';
+                                        otherInput.required = otherCheck.checked;
                                     }
                                 });
-                            });
+                            };
 
+                            // --- 2. Form Submission Management ---
+                            const initFormHandlers = () => {
+                                const formIds = ['donation-form', 'subscribe-form', 'join-form', 'contact-form'];
+
+                                formIds.forEach(id => {
+                                    const form = document.getElementById(id);
+                                    if (!form) return;
+
+                                    form.addEventListener('submit', async (e) => {
+                                        e.preventDefault();
+
+                                        const btn = form.querySelector('button[type="submit"]');
+                                        const btnText = btn.querySelector('span') || btn;
+                                        const originalText = btnText.innerText;
+
+                                        btnText.innerText = "PROCESSING...";
+                                        btn.disabled = true;
+                                        btn.style.opacity = "0.7";
+
+                                        try {
+                                            let formData = new FormData(form);
+                                            const type = formData.get('formType');
+
+                                            // Inside initFormHandlers, where you handle 'join-form'
+                                            if (id === 'join-form') {
+                                                let interestsArray = formData.getAll('interests');
+                                                const otherText = document.getElementById('other-text-input').value.trim();
+
+                                                if (interestsArray.includes("Other") && otherText !== "") {
+                                                    interestsArray = interestsArray.map(val => val === "Other" ? `Other: ${otherText}` : val);
+                                                }
+
+                                                formData.delete('interests');
+                                                formData.set('interests', interestsArray.join(', '));
+
+                                                // FORCE manual check of the category if it's missing
+                                                if (!formData.has('category')) {
+                                                    const selectedCategory = form.querySelector('input[name="category"]:checked').value;
+                                                    formData.set('category', selectedCategory);
+                                                }
+                                            }
+                                            await fetch(SCRIPT_URL, {
+                                                method: 'POST',
+                                                body: formData,
+                                                mode: 'no-cors'
+                                            });
+
+                                            alert(successMessages[type] || "Successfully submitted!");
+                                            form.reset();
+
+                                            // Hide conditional wrappers after reset
+                                            const wrappers = ['org-name-wrapper', 'other-input-wrapper'];
+                                            wrappers.forEach(w => {
+                                                const el = document.getElementById(w);
+                                                if (el) el.style.display = 'none';
+                                            });
+
+                                        } catch (err) {
+                                            console.error("Submission error:", err);
+                                            alert("Submission failed. Please check your connection.");
+                                        } finally {
+                                            btnText.innerText = originalText;
+                                            btn.disabled = false;
+                                            btn.style.opacity = "1";
+                                        }
+                                    });
+                                });
+                            };
+
+                            // Initialize
+                            setupJoinFormToggles();
+                            initFormHandlers();
+
+                            // Handle the "Other" checkbox toggle visibility
                             const otherToggle = document.getElementById('toggle-other');
                             if (otherToggle) {
                                 otherToggle.addEventListener('change', function () {
