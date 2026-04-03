@@ -1531,13 +1531,13 @@
                 </div>
             </div>
             <div class="mt-20">
-                <div class="flex items-center gap-4 mb-12">
+                <!-- <div class="flex items-center gap-4 mb-12">
                     <div class="h-10 w-1 bg-gradient-to-b from-[#C69214] via-[#FFD700] to-[#C69214] rounded-full">
                     </div>
                     <h3 class="font-serif text-3xl font-bold text-slate-900">Advisory Council Members</h3>
                 </div>
 
-                <div class="grid md:grid-cols-2 gap-6 mb-12">
+                 <div class="grid md:grid-cols-2 gap-6 mb-12">
                     <div
                         class="flex items-center gap-6 p-6 bg-gradient-to-r from-amber-50 to-white rounded-3xl border border-amber-100 shadow-sm group hover:shadow-md transition-all duration-300">
                         <div class="relative">
@@ -1551,7 +1551,7 @@
                             </div>
                         </div>
                         <div>
-                            <!-- <p class="text-[10px] uppercase tracking-[0.2em] text-amber-700 font-bold mb-1">Convenor</p> -->
+                            <p class="text-[10px] uppercase tracking-[0.2em] text-amber-700 font-bold mb-1">Convenor</p>
                             <p class="text-xl md:text-2xl font-serif font-bold text-slate-950">Prabhuji Keshav
                                 Chandra
                                 Das</p>
@@ -1571,18 +1571,36 @@
                             </div>
                         </div>
                         <div>
-                            <!-- <p class="text-[10px] uppercase tracking-[0.2em] text-slate-600 font-bold mb-1">Co-Convenor
-                            </p> -->
+                            <p class="text-[10px] uppercase tracking-[0.2em] text-slate-600 font-bold mb-1">Co-Convenor
+                            </p>
                             <p class="text-xl md:text-2xl font-serif font-bold text-slate-950">Adv. Irfan Engineer
                             </p>
                         </div>
                     </div>
-                </div>
+                </div> 
 
                 <div class="flex items-center gap-4 mb-8">
                     <h4 class="font-serif text-2xl font-bold text-slate-900">Advisory Council
                         <span class="text-sm text-slate-500 font-normal ml-3">(33 Members)</span>
                     </h4>
+                </div> -->
+
+                <div class="flex items-end justify-between border-b border-slate-100 pb-6 mb-12">
+                    <div class="flex items-center gap-4">
+                        <div class="h-10 w-1 bg-gradient-to-b from-[#C69214] via-[#FFD700] to-[#C69214] rounded-full">
+                        </div>
+
+                        <div>
+                            <h3 class="font-serif text-3xl font-bold text-slate-900 leading-tight">Advisory Council</h3>
+                            <!-- <p class="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 mt-1">
+                                Consolidated Leadership Body</p> -->
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-2 px-4 py-2 bg-slate-50 rounded-full border border-slate-100">
+                        <span class="w-2 h-2 rounded-full bg-[#C69214] animate-pulse"></span>
+                        <span class="text-sm font-bold text-slate-700">33 Members</span>
+                    </div>
                 </div>
 
                 <div id="advisory-grid"
@@ -1605,7 +1623,7 @@
             <script>
                 // List of 33 Advisory Council Members (excluding Convenor/Co-Convenor)
                 const members = [
-                    "Akshay Ambedkar", "Astrid Lobo", "Dr. Sabir Sayed", "Dr. Rewat Kaninde",
+                    "Prabhuji Keshav Chandra Das", "Adv. Irfan Engineer", "Akshay Ambedkar", "Astrid Lobo", "Dr. Sabir Sayed", "Dr. Rewat Kaninde",
                     "Dr. Salim Khan", "Fr. S.M. Michael", "Iqbal Jagtar Singh", "Jhirad Ralphy",
                     "Kavita Pai", "Masarrat Ahmed", "Maulana Arif Umri", "Mayur Yewle",
                     "Mohammad Faiyaz Baqir", "Mudita Sodder", "Nargis Gaur", "Neha Dabhade",
@@ -1617,23 +1635,28 @@
 
                 const grid = document.getElementById('advisory-grid');
 
-                // Function to generate initials
+                // Updated Function to handle 4 initials for specific names
                 function getInitials(name) {
-                    return name.split(' ').map(n => n[0]).join('').toUpperCase().substring(0, 2);
+                    const parts = name.split(' ');
+                    const initials = parts.map(n => n[0]).join('').toUpperCase();
+
+                    // If the name is the specific 4-part name, return all 4 initials
+                    // Otherwise, default to the standard 2-initial limit
+                    return (parts.length >= 4) ? initials.substring(0, 4) : initials.substring(0, 2);
                 }
 
                 // Populate the grid
                 members.forEach(member => {
                     const memberCard = `
-            <div class="flex items-center gap-4 p-4 bg-white/30 rounded-full border border-[#DCE1E8] transition-colors hover:bg-white/60">
-                <div class="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center font-bold text-slate-500 text-sm">
-                    ${getInitials(member)}
-                </div>
-                <div>
-                    <p class="font-semibold text-slate-950">${member}</p>
-                </div>
+        <div class="flex items-center gap-4 p-4 bg-white/30 rounded-full border border-[#DCE1E8] transition-colors hover:bg-white/60">
+            <div class="w-10 h-10 shrink-0 rounded-full bg-slate-200 flex items-center justify-center font-bold text-slate-500 text-[10px] tracking-tighter">
+                ${getInitials(member)}
             </div>
-        `;
+            <div>
+                <p class="font-semibold text-slate-950">${member}</p>
+            </div>
+        </div>
+    `;
                     grid.innerHTML += memberCard;
                 });
 
@@ -2027,67 +2050,67 @@
                         </div>
 
                         <form id="subscribe-form" class="space-y-4">
-    <input type="hidden" name="formType" value="subscribe">
+                            <input type="hidden" name="formType" value="subscribe">
 
-    <div class="space-y-2">
-        <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">
-            Email Address
-        </label>
-        <input type="email" name="registryEmail" placeholder="Enter Email Address"
-            class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-xl text-sm outline-none transition-all placeholder:text-slate-400 font-medium"
-            required />
-    </div>
+                            <div class="space-y-2">
+                                <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">
+                                    Email Address
+                                </label>
+                                <input type="email" name="registryEmail" placeholder="Enter Email Address"
+                                    class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-xl text-sm outline-none transition-all placeholder:text-slate-400 font-medium"
+                                    required />
+                            </div>
 
-    <button type="submit" id="sub-btn"
-        class="w-full py-4 bg-[#C69214] text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-xl transition-all hover:bg-[#B3850C] active:scale-[0.98] shadow-lg shadow-[#C69214]/20">
-        <span id="sub-btn-text">Subscribe</span>
-    </button>
-</form>
+                            <button type="submit" id="sub-btn"
+                                class="w-full py-4 bg-[#C69214] text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-xl transition-all hover:bg-[#B3850C] active:scale-[0.98] shadow-lg shadow-[#C69214]/20">
+                                <span id="sub-btn-text">Subscribe</span>
+                            </button>
+                        </form>
 
-<script>
-    const APP_URL = "https://script.google.com/macros/s/AKfycbzjlasv00nuG49rUxa_mWVZD6Cr7BidJx0VwEQVQ9IolDSrCbWvOQi1F3YxEnjZMemRqw/exec"; 
+                        <script>
+                            const APP_URL = "https://script.google.com/macros/s/AKfycbzjlasv00nuG49rUxa_mWVZD6Cr7BidJx0VwEQVQ9IolDSrCbWvOQi1F3YxEnjZMemRqw/exec";
 
-    document.querySelectorAll('form').forEach(form => {
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            const btn = form.querySelector('button[type="submit"]');
-            const btnText = btn.querySelector('span');
-            const originalText = btnText ? btnText.innerText : "Submit";
+                            document.querySelectorAll('form').forEach(form => {
+                                form.addEventListener('submit', async (e) => {
+                                    e.preventDefault();
 
-            // 1. Loading State
-            if(btnText) btnText.innerText = "SENDING...";
-            btn.disabled = true;
-            btn.style.opacity = "0.7";
+                                    const btn = form.querySelector('button[type="submit"]');
+                                    const btnText = btn.querySelector('span');
+                                    const originalText = btnText ? btnText.innerText : "Submit";
 
-            try {
-                const formData = new FormData(form);
-                
-                // 2. The Request
-                // mode: 'no-cors' is used to prevent browser security blocks 
-                // when sending data to Google Apps Script.
-                await fetch(APP_URL, { 
-                    method: 'POST', 
-                    body: formData,
-                    mode: 'no-cors' 
-                });
+                                    // 1. Loading State
+                                    if (btnText) btnText.innerText = "SENDING...";
+                                    btn.disabled = true;
+                                    btn.style.opacity = "0.7";
 
-                // 3. Success UI
-                alert("Successfully submitted! Thank you.");
-                form.reset();
+                                    try {
+                                        const formData = new FormData(form);
 
-            } catch (err) {
-                alert("There was an error. Please check your connection.");
-                console.error("Submission Error:", err);
-            } finally {
-                // 4. Reset Button
-                if(btnText) btnText.innerText = originalText;
-                btn.disabled = false;
-                btn.style.opacity = "1";
-            }
-        });
-    });
-</script>
+                                        // 2. The Request
+                                        // mode: 'no-cors' is used to prevent browser security blocks 
+                                        // when sending data to Google Apps Script.
+                                        await fetch(APP_URL, {
+                                            method: 'POST',
+                                            body: formData,
+                                            mode: 'no-cors'
+                                        });
+
+                                        // 3. Success UI
+                                        alert("Successfully submitted! Thank you.");
+                                        form.reset();
+
+                                    } catch (err) {
+                                        alert("There was an error. Please check your connection.");
+                                        console.error("Submission Error:", err);
+                                    } finally {
+                                        // 4. Reset Button
+                                        if (btnText) btnText.innerText = originalText;
+                                        btn.disabled = false;
+                                        btn.style.opacity = "1";
+                                    }
+                                });
+                            });
+                        </script>
                     </div>
                 </div>
             </div>
@@ -2106,7 +2129,7 @@
         }
     </style>
 
-     <footer class="bg-[#050617] py-24 text-white font-sans relative overflow-hidden">
+    <footer class="bg-[#050617] py-24 text-white font-sans relative overflow-hidden">
         <div
             class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-orange-500/50 to-transparent">
         </div>
@@ -2171,7 +2194,8 @@
                     <h6 class="text-[10px] font-black uppercase tracking-[0.3em] text-orange-500">Foundation</h6>
                     <ul class="space-y-4 text-sm font-medium text-white/60">
                         <li><a href="about.html"
-                                class="hover:text-white hover:-translate-x-1 transition-all inline-block">About Us</a></li>
+                                class="hover:text-white hover:-translate-x-1 transition-all inline-block">About Us</a>
+                        </li>
                         <!-- <li><a href="reports.html"
                                 class="hover:text-white hover:-translate-x-1 transition-all inline-block">Impact &
                                 Transparency</a></li> -->
