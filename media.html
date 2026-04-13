@@ -480,6 +480,57 @@
         </div>
     </header>
 
+    <div class="max-w-4xl mx-auto px-6 mt-12">
+        <div
+            class="group relative overflow-hidden bg-white rounded-[2.5rem] p-4 sm:p-6 border border-slate-200/60 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.08)] transition-all duration-500 hover:shadow-[0_30px_60px_-12px_rgba(0,0,0,0.12)]">
+
+            <div
+                class="absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-[#C69214] via-[#FFD700] to-[#C69214]">
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
+                <div class="flex items-center gap-5">
+                    <div
+                        class="hidden sm:flex w-12 h-12 rounded-2xl bg-slate-50 items-center justify-center border border-slate-100 text-[#C69214]">
+                        <i class="fa-solid fa-file-invoice text-xl"></i>
+                    </div>
+                    <div class="text-center sm:text-left">
+                        <!-- <p class="text-[9px] font-black uppercase tracking-[0.3em] text-slate-400 mb-1">Official
+                            Communiqué</p> -->
+                        <h3 class="font-serif text-lg md:text-xl font-bold text-slate-900 leading-tight">
+                            Statement by the Inter-Religious Solidarity Council (IRSC), Mumbai
+                        </h3>
+                    </div>
+                </div>
+
+                <a href="./statements/Statement by the Inter-Religious Solidarity Council (IRSC), Mumbai.docx.pdf"
+                    target="_blank"
+                    class="group/btn relative inline-flex items-center gap-3 bg-indigo-950 text-white px-8 py-4 rounded-2xl overflow-hidden transition-all duration-300 hover:bg-orange-800 hover:shadow-lg hover:shadow-orange-900/20 active:scale-95">
+
+                    <span class="relative z-10 text-[10px] font-black uppercase tracking-widest">View Statement</span>
+                    <i
+                        class="fa-solid fa-file-word relative z-10 text-xs transition-transform duration-300 group-hover/btn:translate-x-1"></i>
+
+                    <div
+                        class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover/btn:animate-shimmer">
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        @keyframes shimmer {
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        .animate-shimmer {
+            animation: shimmer 1.5s infinite;
+        }
+    </style>
+
     <section class="py-24 bg-slate-50/50">
         <div class="max-w-7xl mx-auto px-6">
 
@@ -573,7 +624,7 @@
                         <img src="./images/494339034_1152609973577408_5804208304236367552_n.jpg" alt="Gallery"
                             class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-110">
                     </div>
-                    
+
                     <!-- <div class="group relative overflow-hidden rounded-3xl shadow-lg cursor-pointer">
                         <img src="./images/IRSC Meeting-Media-Solapuri Jhatka.jpeg" alt="Gallery"
                             class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-110">
