@@ -294,7 +294,7 @@
                     class="hidden lg:flex gap-8 items-center text-[11px] font-extrabold uppercase tracking-widest text-slate-500">
                     <a href="about.html" class="hover:text-[#800000] transition-all">About</a>
                     <a href="events.html" class="hover:text-[#800000] transition-all">Events</a>
-                    <a href="media.html" class="hover:text-[#800000] transition-all">News</a>
+                    <a href="media.html" class="hover:text-[#800000] transition-all">News & Reports</a>
                     <a href="gallery.html" class="hover:text-[#800000] transition-all">Gallery</a>
                     <a href="volunteer.html" class="hover:text-[#800000] transition-all">Join US</a>
                     <!-- <a href="reports.html" class="hover:text-[#800000] transition-all">Reports</a> -->
@@ -384,7 +384,7 @@
                     </a>
                     <a href="media.html"
                         class="group relative w-max mx-auto text-xl font-medium tracking-tight text-white/70 hover:text-white transition-all duration-400">
-                        <span class="relative z-10">News</span>
+                        <span class="relative z-10">News & Reports</span>
                         <span
                             class="absolute -bottom-1 left-1/2 w-0 h-[1px] bg-gradient-to-r from-emerald-500/50 to-teal-500/50 transition-all duration-500 ease-out group-hover:w-full group-hover:left-0"></span>
                     </a>
@@ -497,34 +497,36 @@
                 </div>
 
                 <form id="donation-form" class="relative z-10">
-    <input type="hidden" name="formType" value="donation">
+                    <input type="hidden" name="formType" value="donation">
 
-    <h2 class="text-[10px] font-black uppercase tracking-[0.2em] text-orange-400 mb-6 text-center">
-        Step 2: Enter Your Donation Details
-    </h2>
+                    <h2 class="text-[10px] font-black uppercase tracking-[0.2em] text-orange-400 mb-6 text-center">
+                        Step 2: Enter Your Donation Details
+                    </h2>
 
-    <div class="mb-10">
-        <h2 class="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 mb-6">1. Enter Amount (INR)</h2>
-        <div class="relative">
-            <span class="absolute left-5 top-1/2 -translate-y-1/2 font-black text-slate-400">₹</span>
-            <input type="number" name="amount" placeholder="Kindly Enter Your Amount" required
-                class="w-full p-4 pl-10 bg-slate-50 border border-slate-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-irsc-cyan font-black text-[11px] tracking-widest">
-        </div>
-    </div>
+                    <div class="mb-10">
+                        <h2 class="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 mb-6">1. Enter
+                            Amount (INR)</h2>
+                        <div class="relative">
+                            <span class="absolute left-5 top-1/2 -translate-y-1/2 font-black text-slate-400">₹</span>
+                            <input type="number" name="amount" placeholder="Kindly Enter Your Amount" required
+                                class="w-full p-4 pl-10 bg-slate-50 border border-slate-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-irsc-cyan font-black text-[11px] tracking-widest">
+                        </div>
+                    </div>
 
-    <div class="space-y-4 mb-10">
-        <h2 class="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 mb-2">2. Enter Your Details</h2>
-        <input type="text" name="fullName" placeholder="FULL NAME" required
-            class="w-full p-4 bg-slate-50 border border-slate-200 rounded-2xl focus:outline-none focus:border-irsc-purple font-black text-[10px] tracking-widest">
-        <input type="email" name="email" placeholder="EMAIL ADDRESS" required
-            class="w-full p-4 bg-slate-50 border border-slate-200 rounded-2xl focus:outline-none focus:border-irsc-purple font-black text-[10px] tracking-widest">
-    </div>
+                    <div class="space-y-4 mb-10">
+                        <h2 class="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 mb-2">2. Enter Your
+                            Details</h2>
+                        <input type="text" name="fullName" placeholder="FULL NAME" required
+                            class="w-full p-4 bg-slate-50 border border-slate-200 rounded-2xl focus:outline-none focus:border-irsc-purple font-black text-[10px] tracking-widest">
+                        <input type="email" name="email" placeholder="EMAIL ADDRESS" required
+                            class="w-full p-4 bg-slate-50 border border-slate-200 rounded-2xl focus:outline-none focus:border-irsc-purple font-black text-[10px] tracking-widest">
+                    </div>
 
-    <button type="submit"
-        class="w-full py-5 bg-indigo-950 text-white rounded-[2rem] font-black uppercase tracking-[0.3em] text-[11px] shadow-2xl hover:bg-orange-600 hover:-translate-y-1 transition-all">
-        <span id="btn-text">Submit Donation Details</span>
-    </button>
-</form>
+                    <button type="submit"
+                        class="w-full py-5 bg-indigo-950 text-white rounded-[2rem] font-black uppercase tracking-[0.3em] text-[11px] shadow-2xl hover:bg-orange-600 hover:-translate-y-1 transition-all">
+                        <span id="btn-text">Submit Donation Details</span>
+                    </button>
+                </form>
             </div>
         </main>
     </div>
@@ -610,91 +612,91 @@
                             </p> -->
                         </div>
 
-                         <form id="subscribe-form" class="space-y-4">
-    <input type="hidden" name="formType" value="subscribe">
+                        <form id="subscribe-form" class="space-y-4">
+                            <input type="hidden" name="formType" value="subscribe">
 
-    <div class="space-y-2">
-        <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">
-            Email Address
-        </label>
-        <input type="email" name="registryEmail" placeholder="Enter Email Address"
-            class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-xl text-sm outline-none transition-all placeholder:text-slate-400 font-medium"
-            required />
-    </div>
+                            <div class="space-y-2">
+                                <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">
+                                    Email Address
+                                </label>
+                                <input type="email" name="registryEmail" placeholder="Enter Email Address"
+                                    class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-xl text-sm outline-none transition-all placeholder:text-slate-400 font-medium"
+                                    required />
+                            </div>
 
-    <button type="submit" id="sub-btn"
-        class="w-full py-4 bg-[#C69214] text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-xl transition-all hover:bg-[#B3850C] active:scale-[0.98] shadow-lg shadow-[#C69214]/20">
-        <span id="sub-btn-text">Subscribe</span>
-    </button>
-</form>
+                            <button type="submit" id="sub-btn"
+                                class="w-full py-4 bg-[#C69214] text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-xl transition-all hover:bg-[#B3850C] active:scale-[0.98] shadow-lg shadow-[#C69214]/20">
+                                <span id="sub-btn-text">Subscribe</span>
+                            </button>
+                        </form>
 
-<script>
-                    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzjlasv00nuG49rUxa_mWVZD6Cr7BidJx0VwEQVQ9IolDSrCbWvOQi1F3YxEnjZMemRqw/exec";
+                        <script>
+                            const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzjlasv00nuG49rUxa_mWVZD6Cr7BidJx0VwEQVQ9IolDSrCbWvOQi1F3YxEnjZMemRqw/exec";
 
-                    // 1. Define custom messages for each formType
-                    const successMessages = {
-                        'donation': "Thank you for your generous contribution! Your details have been recorded.",
-                        'subscribe': "You've successfully joined our mailing list. Stay tuned!",
-                        'join': "Application received! We'll review your details and get back to you soon.",
-                        'contact': "Message sent! Our team will respond to your inquiry shortly."
-                    };
+                            // 1. Define custom messages for each formType
+                            const successMessages = {
+                                'donation': "Thank you for your generous contribution! Your details have been recorded.",
+                                'subscribe': "You've successfully joined our mailing list. Stay tuned!",
+                                'join': "Application received! We'll review your details and get back to you soon.",
+                                'contact': "Message sent! Our team will respond to your inquiry shortly."
+                            };
 
-                    // 2. Form IDs to manage (Added contact-form)
-                    const formIds = ['donation-form', 'subscribe-form', 'join-form', 'contact-form'];
+                            // 2. Form IDs to manage (Added contact-form)
+                            const formIds = ['donation-form', 'subscribe-form', 'join-form', 'contact-form'];
 
-                    formIds.forEach(id => {
-                        const form = document.getElementById(id);
+                            formIds.forEach(id => {
+                                const form = document.getElementById(id);
 
-                        if (form) {
-                            form.addEventListener('submit', async (e) => {
-                                e.preventDefault();
+                                if (form) {
+                                    form.addEventListener('submit', async (e) => {
+                                        e.preventDefault();
 
-                                const btn = form.querySelector('button[type="submit"]');
-                                const btnText = btn.querySelector('span') || btn;
-                                const originalText = btnText.innerText;
+                                        const btn = form.querySelector('button[type="submit"]');
+                                        const btnText = btn.querySelector('span') || btn;
+                                        const originalText = btnText.innerText;
 
-                                // Loading State
-                                btnText.innerText = "PROCESSING...";
-                                btn.disabled = true;
-                                btn.style.opacity = "0.7";
+                                        // Loading State
+                                        btnText.innerText = "PROCESSING...";
+                                        btn.disabled = true;
+                                        btn.style.opacity = "0.7";
 
-                                try {
-                                    const formData = new FormData(form);
-                                    const type = formData.get('formType'); // Get the hidden input value
+                                        try {
+                                            const formData = new FormData(form);
+                                            const type = formData.get('formType'); // Get the hidden input value
 
-                                    // Send data
-                                    await fetch(SCRIPT_URL, {
-                                        method: 'POST',
-                                        body: formData,
-                                        mode: 'no-cors'
+                                            // Send data
+                                            await fetch(SCRIPT_URL, {
+                                                method: 'POST',
+                                                body: formData,
+                                                mode: 'no-cors'
+                                            });
+
+                                            // 3. Show customized success message
+                                            const msg = successMessages[type] || "Successfully submitted!";
+                                            alert(msg);
+
+                                            form.reset();
+
+                                        } catch (err) {
+                                            console.error("Submission error:", err);
+                                            alert("Submission failed. Please check your connection and try again.");
+                                        } finally {
+                                            // Reset Button
+                                            btnText.innerText = originalText;
+                                            btn.disabled = false;
+                                            btn.style.opacity = "1";
+                                        }
                                     });
-
-                                    // 3. Show customized success message
-                                    const msg = successMessages[type] || "Successfully submitted!";
-                                    alert(msg);
-
-                                    form.reset();
-
-                                } catch (err) {
-                                    console.error("Submission error:", err);
-                                    alert("Submission failed. Please check your connection and try again.");
-                                } finally {
-                                    // Reset Button
-                                    btnText.innerText = originalText;
-                                    btn.disabled = false;
-                                    btn.style.opacity = "1";
                                 }
                             });
-                        }
-                    });
-                </script>
+                        </script>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-     <footer class="bg-[#050617] py-24 text-white font-sans relative overflow-hidden">
+    <footer class="bg-[#050617] py-24 text-white font-sans relative overflow-hidden">
         <div
             class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-orange-500/50 to-transparent">
         </div>
@@ -759,7 +761,8 @@
                     <h6 class="text-[10px] font-black uppercase tracking-[0.3em] text-orange-500">Foundation</h6>
                     <ul class="space-y-4 text-sm font-medium text-white/60">
                         <li><a href="about.html"
-                                class="hover:text-white hover:-translate-x-1 transition-all inline-block">About Us</a></li>
+                                class="hover:text-white hover:-translate-x-1 transition-all inline-block">About Us</a>
+                        </li>
                         <!-- <li><a href="reports.html"
                                 class="hover:text-white hover:-translate-x-1 transition-all inline-block">Impact &
                                 Transparency</a></li> -->
